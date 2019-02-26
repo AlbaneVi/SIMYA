@@ -1,18 +1,16 @@
 
 <h1>Nouvel événement</h1>
 <ul>
-<%= form_for @event do |f| %>
- <li><%= f.label :title %><br></li>
-  <%= f.text_field :title %>
-  <li><%= f.label :text %><br></li>
-    <%= f.text_field :text%>
-    <li><%= f.label :date_start %><br></li>
-    <%= f.text_field :date_start%>
-    <li><%= f.label :date_end %><br></li>
-    <%= f.text_field :date_end %>
-    <li><%= f.label :media %><br></li>
-    <%= f.file_field :image %>
-
+<%= simple_form_for @event do |f| %>
+  <%= f.input :title %>
+  <%= f.input :text %>
+  <%= f.input :date_start %>
+  <%= f.input :date_end %>
+  <%= f.file_field :image %>
  <%= f.button :submit, class: 'btn btn-primary' %>
 </ul>
 <% end %>
+
+
+
+
