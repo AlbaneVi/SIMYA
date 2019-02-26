@@ -1,15 +1,24 @@
 <h1>Inbox</h1>
-<ul>
-  <% @conversations.each do |conversation| %>
-    <% recipient = conversation.sender_id == current_user.id ? conversation.receiver : conversation.sender %>
-    <li><%= link_to recipient.username, conversation_messages_path(conversation) %></li>
-  <% end %>
-</ul>
-
-
-<h3>Users</h3>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.firstname, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-8">
+    <ul class="list-group">
+      <% @conversations.each do |conversation| %>
+        <li class="list-group-item" data-conversation-id="<%= conversation.id %>">
+          <%= link_to conversation.recipient(current_user).firstname, conversation_requests_path(conversation) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <input id="search" placeholder="Search" class="form-control">
+    </div>
+    <ul id="users" class="list-group">
+      <% @users.each do |user| %>
+        <li class="list-group-item" data-searchstring="<%= user.firstname %> <%= user.lastname %>">
+          <%= link_to user.firstname, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
