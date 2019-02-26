@@ -1,0 +1,10 @@
+
+<h1>Nouvel événement</h1>
+
+<%= simple_form_for @event do |f| %>
+  <%= f.input :title %>
+  <%= f.input :text %>
+  <%= f.input :date_start %>
+  <%= f.input :date_end %>
+ <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
