@@ -6,10 +6,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = @conversation.requests
-
-    @requests.where("user_id != ?", current_user.id, false)
-
+    @conversation.requests.where("user_id != ?", current_user.id)
     @request = @conversation.requests.new
   end
 
@@ -18,6 +15,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
 
     if @request.save
+      ActionCable.server.broadcast "Requests", { conversation_id: @conversation.id }
       redirect_to conversation_requests_path(@conversation)
     else
       @request
