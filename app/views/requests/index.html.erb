@@ -1,2 +1,19 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
+<h1>Request</h1>
+<ul>
+  <% @requests.each do |request| %>
+    <% if request.body %>
+      <li>
+        <h4><%= request.user.fistname %></h4>
+        <p><%= request.body %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= form_for [@conversation, @request] do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Your request" %>
+  </div>
+
+  <%= f.submit "Send" %>
+<% end %>
