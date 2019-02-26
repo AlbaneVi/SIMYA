@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 puts "destroying everything"
 
 Residency.destroy_all
@@ -51,3 +52,5 @@ residency1.user = user1
 residency1.transition = transition1
 residency1.save!
 puts "residency created!"
+
+
