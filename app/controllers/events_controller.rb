@@ -1,11 +1,17 @@
 class EventsController < ApplicationController
-
-before_action :set_event, only: %i[edit update destroy]
-
+before_action :set_event, only: %i[show edit update destroy]
+  
+  def index
+    @events = Event.all
+  end
+  
   def new
     @event = Event.new
   end
-
+  
+  def show
+  end
+  
   def edit
   end
 
@@ -39,5 +45,6 @@ before_action :set_event, only: %i[edit update destroy]
     params.require(:event).permit(:title, :text, :date_start, :date_end)
   end
 end
+
 
 end
