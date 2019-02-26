@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_113342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "body"
+    t.boolean "read", default: true
     t.bigint "user_id"
     t.index ["children_id"], name: "index_requests_on_children_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
