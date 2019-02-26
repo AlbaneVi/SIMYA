@@ -10,4 +10,8 @@ class Conversation < ApplicationRecord
           OR (conversations.receiver_id = ? AND conversations.sender_id = ?)",
           sender_id, receiver_id, sender_id, receiver_id)
   }
+
+  def recipient(current_user)
+    self.sender_id == current_user.id ? self.receiver : self.sender
+  end
 end

@@ -1,19 +1,23 @@
-<h1>Request</h1>
-<ul>
-  <% @requests.each do |request| %>
+<div id="requests">
+  <% @conversation.requests.each do |request| %>
     <% if request.body %>
-      <li>
-        <h4><%= request.user.fistname %></h4>
-        <p><%= request.body %></p>
-      </li>
+      <div class="message">
+        <div class="message-left">
+          <%= image_tag request.user.image.thumb, class: "message-object user-img", alt: request.user.firstname %>
+        </div>
+        <div class="message-body">
+          <h5 class="message-heading"><%= request.user.firstname %> <small class="text-muted"><%= request.time %></small></h5>
+          <p><%= request.body %></p>
+        </div>
+      </div>
     <% end %>
   <% end %>
-</ul>
+</div>
 
 <%= form_for [@conversation, @request] do |f| %>
-  <div class="field">
-    <%= f.text_area :body, placeholder: "Your request" %>
+  <div class="form-group">
+    <%= f.text_area :body, autofocus: true, placeholder: "Your request", class: "form-control", rows: 5 %>
   </div>
 
-  <%= f.submit "Send" %>
+  <%= f.submit "Send", class: "btn btn-primary pull-right" %>
 <% end %>
