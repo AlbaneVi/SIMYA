@@ -1,0 +1,5 @@
+<h1>index(list) de residencies</h1>
+<ul><% @residencies.each do |residency| %>
+    <li> <%= residency.date_start %> to <%= residency.date_end %> by <%= residency.users.firstname %> </li>
+    <% end %>
+</ul>
