@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  
-before_action :set_event, only: %i[show new edit update destroy]
+
+before_action :set_events, only: %i[show edit update destroy]
 
   def index
     @events = Event.all
@@ -25,9 +25,9 @@ before_action :set_event, only: %i[show new edit update destroy]
 
     def create
       @event = Event.new(events_params)
-      @event.user = current_user
+      # @event.user = current_user
       if @event.save!
-        redirect_to event_path
+        redirect_to events_path
       else
         render :new
       end
