@@ -1,5 +1,15 @@
 <h1>index(list) de residencies</h1>
-<ul><% @residencies.each do |residency| %>
-    <li> <%= residency.date_start %> to <%= residency.date_end %> by <%= residency.users.firstname %> </li>
-    <% end %>
-</ul>
+<%= month_calendar do |date| %>
+  <%= date.day %>
+<% end %>
+
+
+<%= month_calendar events: @residencies do |date, residencies| %>
+  <%= date %>
+
+  <% residencies.each do |meeting| %>
+    <div>
+      <%= meeting.user %>
+    </div>
+  <% end %>
+<% end %>

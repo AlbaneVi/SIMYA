@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_113342) do
+ActiveRecord::Schema.define(version: 2019_02_26_160911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,42 +41,43 @@ ActiveRecord::Schema.define(version: 2019_02_26_113342) do
 
   create_table "folders", force: :cascade do |t|
     t.string "name"
-    t.bigint "children_id"
+    t.bigint "child_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["children_id"], name: "index_folders_on_children_id"
+    t.index ["child_id"], name: "index_folders_on_child_id"
   end
 
   create_table "media", force: :cascade do |t|
     t.string "photo"
-    t.bigint "events_id"
+    t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["events_id"], name: "index_media_on_events_id"
+    t.index ["event_id"], name: "index_media_on_event_id"
   end
 
   create_table "requests", force: :cascade do |t|
     t.date "date_start"
     t.date "date_end"
     t.string "status"
-    t.bigint "children_id"
+    t.bigint "child_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "body"
+    t.boolean "read", default: true
     t.bigint "user_id"
-    t.index ["children_id"], name: "index_requests_on_children_id"
+    t.index ["child_id"], name: "index_requests_on_child_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "residencies", force: :cascade do |t|
     t.date "date_start"
     t.date "date_end"
-    t.bigint "users_id"
-    t.bigint "transitions_id"
+    t.bigint "user_id"
+    t.bigint "transition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["transitions_id"], name: "index_residencies_on_transitions_id"
-    t.index ["users_id"], name: "index_residencies_on_users_id"
+    t.index ["transition_id"], name: "index_residencies_on_transition_id"
+    t.index ["user_id"], name: "index_residencies_on_user_id"
   end
 
   create_table "transitions", force: :cascade do |t|
@@ -105,11 +106,11 @@ ActiveRecord::Schema.define(version: 2019_02_26_113342) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "folders", "children", column: "children_id"
-  add_foreign_key "media", "events", column: "events_id"
-  add_foreign_key "requests", "children", column: "children_id"
+  add_foreign_key "folders", "children"
+  add_foreign_key "media", "events"
+  add_foreign_key "requests", "children"
   add_foreign_key "requests", "users"
-  add_foreign_key "residencies", "transitions", column: "transitions_id"
-  add_foreign_key "residencies", "users", column: "users_id"
+  add_foreign_key "residencies", "transitions"
+  add_foreign_key "residencies", "users"
   add_foreign_key "users", "children"
 end
