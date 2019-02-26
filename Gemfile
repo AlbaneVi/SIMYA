@@ -19,6 +19,8 @@ gem 'webpacker'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
+gem "simple_calendar", "~> 2.0"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

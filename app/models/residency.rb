@@ -1,4 +1,4 @@
 class Residency < ApplicationRecord
-  belongs_to :users
-  belongs_to :transitions
+  belongs_to :user
+  belongs_to :transition
 end
