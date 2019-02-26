@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   resources :residencies
 
   resources :requests
-  resources :events, only: [:index, :show, :new, :edit]
+  resources :events
 
   resources :conversations, only: [:index, :create] do
     resources :requests, only: [:index, :create]
   end
 
- 
 end
