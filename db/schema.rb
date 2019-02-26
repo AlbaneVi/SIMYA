@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_175237) do
+ActiveRecord::Schema.define(version: 2019_02_26_113342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2019_02_25_175237) do
     t.string "name"
     t.integer "code"
     t.date "birthday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,14 +56,16 @@ ActiveRecord::Schema.define(version: 2019_02_25_175237) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string "message"
     t.date "date_start"
     t.date "date_end"
     t.string "status"
     t.bigint "children_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "body"
+    t.bigint "user_id"
     t.index ["children_id"], name: "index_requests_on_children_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "residencies", force: :cascade do |t|
@@ -99,6 +108,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_175237) do
   add_foreign_key "folders", "children", column: "children_id"
   add_foreign_key "media", "events", column: "events_id"
   add_foreign_key "requests", "children", column: "children_id"
+  add_foreign_key "requests", "users"
   add_foreign_key "residencies", "transitions", column: "transitions_id"
   add_foreign_key "residencies", "users", column: "users_id"
   add_foreign_key "users", "children"
