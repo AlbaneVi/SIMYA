@@ -13,6 +13,17 @@ before_action :set_events, only: %i[show edit update destroy]
   def show
   end
 
+  def create
+    @event = Event.new(events_params)
+    # @event.user = current_user
+    if @event.save!
+      redirect_to root_path
+
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
@@ -20,7 +31,6 @@ before_action :set_events, only: %i[show edit update destroy]
     @event.update(events_params)
     redirect_to event_path
   end
-
 
 
     def create
@@ -32,6 +42,7 @@ before_action :set_events, only: %i[show edit update destroy]
         render :new
       end
     end
+
 
     def destroy
       @event.destroy
