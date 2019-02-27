@@ -15,39 +15,3 @@ $body-font: "Asap", sans-serif;
 // }
 // $my-font: "Font Name";
 
-// For Symia:
-
-// h1 = title Symia
-h1 {
-  font-family: $headers-font;
-  font-size: 60px;
-}
-
-// h2 = tagline
-h2 {
-  font-family: $body-font;
-  font-size: 15px;
-}
-
-// h3 = date
-h3 {
-  font-family: $body-font;
-  font-size: 30px;
-}
-
-// h4 = event's title
-h4 {
-  font-family: $headers-font;
-  font-size: 30px;
-}
-
-p {
-  font-family: $body-font;
-  font-size: 12px;
-  color: $color-font;
-  line-height: 18px;
-}
-
-p.day {
-  font-size: 10px;
-}

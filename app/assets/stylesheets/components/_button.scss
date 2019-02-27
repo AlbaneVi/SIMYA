@@ -1,0 +1,29 @@
+// bouton valider pour formulaire
+.button {
+width: 300px;
+height: 25px;
+border-radius: 12.5px;
+background: $color-font;
+color: #fff;
+font-size: 12px;
+margin: 0;
+padding: 0;
+}
+
+.button:hover {
+background: #fff;
+border: 1px solid ;
+color: $color-font;
+}
+
+// bouton envoyer pour le chat
+.chat {
+width: 144px;
+background: $color-btn-chat;
+}
+
+.chat:hover {
+background: #fff;
+border: 1px solid ;
+color: $color-btn-chat;
+}
