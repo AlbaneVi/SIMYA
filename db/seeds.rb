@@ -30,6 +30,11 @@ user1 = User.new(
   )
 user1.save!
 
+user3 = User.new(
+  email: "tata@gmail.com",
+  password: "tata@gmail.com")
+user3.save!
+
 puts "user created!"
 puts "creating one transition"
 
