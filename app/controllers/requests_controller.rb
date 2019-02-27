@@ -6,18 +6,17 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = @conversation.requests
-
-    @requests.where("user_id != ?", current_user.id, false)
-
+    @conversation.requests.where("user_id != ?", current_user.id)
     @request = @conversation.requests.new
   end
 
   def create
     @request = @conversation.requests.new(request_params)
     @request.user = current_user
+    @request.child_id = current_user.child_id
 
-    if @request.save
+    if @request.save!
+      ActionCable.server.broadcast "Requests", { conversation_id: @conversation.id }
       redirect_to conversation_requests_path(@conversation)
     else
       @request

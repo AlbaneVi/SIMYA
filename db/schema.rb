@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_160911) do
+ActiveRecord::Schema.define(version: 2019_02_26_172607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,9 +63,10 @@ ActiveRecord::Schema.define(version: 2019_02_26_160911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "body"
-    t.boolean "read", default: true
     t.bigint "user_id"
+    t.bigint "conversation_id"
     t.index ["child_id"], name: "index_requests_on_child_id"
+    t.index ["conversation_id"], name: "index_requests_on_conversation_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_160911) do
   add_foreign_key "folders", "children"
   add_foreign_key "media", "events"
   add_foreign_key "requests", "children"
+  add_foreign_key "requests", "conversations"
   add_foreign_key "requests", "users"
   add_foreign_key "residencies", "transitions"
   add_foreign_key "residencies", "users"

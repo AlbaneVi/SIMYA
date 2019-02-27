@@ -1,12 +1,17 @@
 <div id="requests">
+  <h1>Envoyer un message</h1>
   <% @conversation.requests.each do |request| %>
     <% if request.body %>
-      <div class="message">
-        <div class="message-left">
-          <%= image_tag request.user.image.thumb, class: "message-object user-img", alt: request.user.firstname %>
+      <div class="request">
+        <div class="request-left">
+
+          <p><%= request.date_start %></p>p
+          <%#= request.user.image.thumb, class: "request-object user-img", alt: request.user.firstname %>
+          <p><%= request.user.firstname %></p>
         </div>
-        <div class="message-body">
-          <h5 class="message-heading"><%= request.user.firstname %> <small class="text-muted"><%= request.time %></small></h5>
+        <div class="request-body">
+          <h5 class="request-heading">
+          <p><%= request.user.firstname %></p>
           <p><%= request.body %></p>
         </div>
       </div>
@@ -16,8 +21,8 @@
 
 <%= form_for [@conversation, @request] do |f| %>
   <div class="form-group">
-    <%= f.text_area :body, autofocus: true, placeholder: "Your request", class: "form-control", rows: 5 %>
+    <%= f.text_area :body, autofocus: true, placeholder: "Tapez votre message ici.", class: "form-control", rows: 5 %>
   </div>
 
-  <%= f.submit "Send", class: "btn btn-primary pull-right" %>
+  <%= f.submit "Envoyer", class: "btn btn-primary pull-right" %>
 <% end %>

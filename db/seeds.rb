@@ -24,9 +24,16 @@ event1.save!
 puts "event created!"
 puts "creating one user"
 
+child1 = Child.new(
+  name: "tata",
+  code: "11"
+  )
+child1.save!
+
 user1 = User.new(
   email:"toto@gmail.com",
-  password:"toto@gmail.com"
+  password:"toto@gmail.com",
+  child_id: 1
   )
 user1.save!
 
@@ -50,12 +57,13 @@ puts "transition created!"
 puts "creating one residency"
 residency1 = Residency.new(
   date_start: "2019-03-01",
-  date_end: "2019-03-08",
+  date_end: "2019-03-08"
 )
 
 residency1.user = user1
 residency1.transition = transition1
 residency1.save!
 puts "residency created!"
+
 
 

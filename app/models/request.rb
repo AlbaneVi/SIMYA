@@ -1,5 +1,5 @@
 class Request < ApplicationRecord
-  belongs_to :childs
+  belongs_to :child
   belongs_to :conversation
   belongs_to :user
 
