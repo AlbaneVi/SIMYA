@@ -13,8 +13,9 @@ class RequestsController < ApplicationController
   def create
     @request = @conversation.requests.new(request_params)
     @request.user = current_user
+    @request.child_id = current_user.child_id
 
-    if @request.save
+    if @request.save!
       ActionCable.server.broadcast "Requests", { conversation_id: @conversation.id }
       redirect_to conversation_requests_path(@conversation)
     else

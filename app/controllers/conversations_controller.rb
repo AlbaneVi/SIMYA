@@ -10,10 +10,8 @@ class ConversationsController < ApplicationController
     p params[:sender_id].to_i
     p params[:receiver_id].to_i
     if Conversation.between(params[:sender_id].to_i, params[:receiver_id].to_i).present?
-      p "labla"
       @conversation = Conversation.between(params[:sender_id], params[:receiver_id]).first
     else
-      p "blibli"
       @conversation = Conversation.create!(conversation_params)
     end
     redirect_to conversation_requests_path(@conversation)
