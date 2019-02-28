@@ -2,7 +2,8 @@
 // Examples:
 // @import "dashboard";
 // @import "profile";
-// @import "map";
+@import "header";
+@import "custody";
 // For Symia:
 
 body {
@@ -19,6 +20,8 @@ h1 {
 h2 {
   font-family: $body-font;
   font-size: 15px;
+  line-height: 0px;
+  opacity: 0.6;
 }
 
 // h3 = date
@@ -31,6 +34,7 @@ h3 {
 h4 {
   font-family: $headers-font;
   font-size: 30px;
+  text-transform: capitalize;
 }
 
 p {

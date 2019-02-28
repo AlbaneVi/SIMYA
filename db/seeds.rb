@@ -1,3 +1,14 @@
+puts "Destroying media ..."
+Medium.destroy_all
+
+Medium.create! ({photo: "https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551358868/simya/photo-child-example.jpg",
+                custody_id: 4})
+
+puts "media is created"
+
+exit
+
+
 puts "Destroying everything..."
 
 Message.destroy_all
@@ -58,3 +69,4 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
   Custody.create!(day_on: day_on, user: user_id, title: title)
 end
+

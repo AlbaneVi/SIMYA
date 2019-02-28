@@ -1,29 +1,41 @@
 // bouton valider pour formulaire
 .button {
-width: 300px;
-height: 25px;
-border-radius: 12.5px;
-background: $color-font;
-color: #fff;
-font-size: 12px;
-margin: 0;
-padding: 0;
+  width: 300px;
+  height: 25px;
+  border-radius: 12.5px;
+  background: $color-font;
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .button:hover {
-background: #fff;
-border: 1px solid ;
-color: $color-font;
+  background: #fff;
+  border: 1px solid ;
+  color: $color-font;
 }
 
-// bouton envoyer pour le chat
-.chat {
-width: 144px;
-background: $color-btn-chat;
+.btn-change-date-user-2 {
+  background-image: url(https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551370527/simya/btn-user-2-change.png);
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  background-position: center;
+  background-color: transparent;
+}
+.btn-change-date-user-2:hover {
+  background-color: transparent;
+  background-image: url(https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551370527/simya/btn-user-2-change-hover.png);
 }
 
-.chat:hover {
-background: #fff;
-border: 1px solid ;
-color: $color-btn-chat;
+.btn-close {
+  background-image: url(https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551370527/simya/btn-close-hover.png);
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  background-position: center;
+}
+.btn-close:hover {
+  background-image: url(https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551370527/simya/btn-close.png);
 }

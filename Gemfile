@@ -19,12 +19,14 @@ gem 'webpacker'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 gem 'awesome_print'
+gem 'cloudinary', '~> 1.9.1'
 
 gem "simple_calendar", "~> 2.0"
 gem 'awesome_print'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'dotenv-rails'
 end
 
 group :development, :test do
