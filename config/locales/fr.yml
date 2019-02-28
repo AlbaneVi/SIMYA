@@ -33,11 +33,14 @@
 fr:
   activerecord:
     attributes:
-      event:
+      custody:
         title: "Titre"
-        text: "Texte"
-        date_start: "Date de début"
-        date_end: "Date de fin"
+        text: "Description"
+        day_on: "Date"
+        image: "Télécharger une photo"
+      envent:
+        title: "Titre"
+        text: "Description"
         image: "Télécharger une photo"
 
     errors:

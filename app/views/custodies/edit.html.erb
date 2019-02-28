@@ -1,3 +1,9 @@
+<div class="container-edit-custody">
+ <div class="row">
+  <div class="col-sm-12 col-sm-offset-0">
+
+
+
 <% if @day_on <= Date.today %>
 
   <h1>Ajouter un événement </h1>
@@ -5,7 +11,7 @@
    <%= f.input     :title %>
    <%= f.input     :text %>
    <%=f.file_field :photo%>
-   <%= f.button    :submit, class: 'btn btn-primary' %>
+   <%= f.button    :submit, class: 'button' %>
   <% end %>
 <% else %>
 
@@ -14,8 +20,10 @@
    <%= f.input  :day_on%>
    <%= f.input  :title %>
    <%= f.input  :text %>
-   <%= f.button :submit, class: 'btn btn-primary' %>
+   <%= f.button :submit, class: 'button' %>
   <% end %>
 <% end %>
 
-
+  </div> <!-- end col -->
+ </div> <!-- end row -->
+</div> <!-- end container -->
