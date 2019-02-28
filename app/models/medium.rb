@@ -1,3 +1,3 @@
 class Medium < ApplicationRecord
-  belongs_to :events
+  belongs_to :custody
 end

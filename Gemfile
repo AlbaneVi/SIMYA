@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+gem 'awesome_print'
 
 gem "simple_calendar", "~> 2.0"
 gem 'awesome_print'

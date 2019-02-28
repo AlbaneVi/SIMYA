@@ -1,9 +1,10 @@
 class User < ApplicationRecord
-  has_many :residencies
+  belongs_to :child, optional: true
 
-  has_many :transitions, through: :residencies
-  has_many :requests, class_name: 'Request', foreign_key: 'sender_id'
-  has_many :requests, class_name: 'Request', foreign_key: 'receiver_id'
+  has_many :custodies
+  # has_many :unread_messages, -> { where(read: false) },
+  #          class_name: 'Message',
+  #          foreign_key: :receiver_id
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
