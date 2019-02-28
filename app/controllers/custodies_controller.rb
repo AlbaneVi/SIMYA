@@ -22,6 +22,7 @@ class CustodiesController < ApplicationController
   end
 
   def edit
+    @day_on = @custody.day_on
   end
 
   def update
