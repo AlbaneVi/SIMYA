@@ -1,0 +1,58 @@
+
+.show-container {
+  width: 718px;
+  height: 560px;
+  margin: 0 auto;
+  background-color: $color-user-1;
+  border-radius: 25px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 10px 25px;
+  margin-top: 35px;
+  display: flex;
+}
+
+.body-left {
+  flex: 1 0 auto;
+}
+.body-right {
+  flex: 0 0 170px;
+}
+.body-right h4{
+  margin-top: 35px;
+}
+
+
+
+span {
+  font-family: $body-font;
+}
+.show-date {
+  padding-bottom: 45px;
+}
+
+.day {
+  font-size: 10px;
+
+}
+.date {
+  font-size: 30px;
+  padding: 0px 10px;
+}
+.month {
+  font-size: 10px;
+}
+
+.show-photo{
+  width: 162px;
+  height: 162px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border:1px;
+}
+.show-btn div {
+  display: inline-block;
+}
+.show-btn {
+  text-align: right;
+}
