@@ -1,9 +1,0 @@
-<%= month_calendar events: @residencies do |date, residencies| %>
-  <%= date %>
-  <% residencies.each do |residency| %>
-    <div>
-      <%= residency.user.email %>
-    </div>
-  <% end %>
-<% end %>
-
