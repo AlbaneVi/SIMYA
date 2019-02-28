@@ -6,51 +6,63 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "destroying everything"
+puts "Destroying everything..."
 
-Residency.destroy_all
-Transition.destroy_all
+Message.destroy_all
+Custody.destroy_all
 User.destroy_all
-Event.destroy_all
-
-puts "creating one event"
-
-event1 = Event.new(
-  title: "super journée",
-  text:" blma blaiqmoigh^ù"
-  )
-event1.save!
-
-puts "event created!"
-puts "creating one user"
-
-user1 = User.new(
-  email:"toto@gmail.com",
-  password:"toto@gmail.com"
-  )
-user1.save!
-
-puts "user created!"
-puts "creating one transition"
-
-transition1 = Transition.new(
-  date: "2019-03-01",
-  hour: Time.now,
-  place:"Lyon"
-  )
-transition1.save!
-
-puts "transition created!"
-
-puts "creating one residency"
-residency1 = Residency.new(
-  date_start: "2019-03-01",
-  date_end: "2019-03-08",
-)
-
-residency1.user = user1
-residency1.transition = transition1
-residency1.save!
-puts "residency created!"
+Child.destroy_all
 
 
+child1 = Child.create!(first_name: "child f_name", last_name: "child l_name", birthday: 3.years.ago)
+
+c1_parent1 = User.create!(first_name: "c1p1 f_name",
+                          last_name: "c1p1 l_name",
+                          email: "toto@gmail.com",
+                          password: 'azerty',
+                          phone: '0602030405',
+                          child: child1)
+
+c1_parent2 = User.create!(first_name: "c1p2 f_name",
+                          last_name: "c1p2 l_name",
+                          email: "titi@gmail.com",
+                          password: 'azerty',
+                          phone: '0634353637',
+                          child: child1)
+
+message = Message.create!({
+    body: 'coucou ça va?',
+    sender: c1_parent1,
+    receiver: c1_parent2,
+    read: true
+})
+Message.where(id: message.id).update_all(send_at: 120.minutes.ago)
+
+message = Message.create!({
+    body: 'oui et toi?',
+    sender: c1_parent2,
+    receiver: c1_parent1,
+    read: true
+})
+Message.where(id: message.id).update_all(send_at: 110.minutes.ago)
+
+message = Message.create!({
+    body: 'bof...',
+    sender: c1_parent1,
+    receiver: c1_parent2,
+})
+Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
+
+
+40.times do |n|
+  titles = {
+    "3" => "bonjour",
+    "32" => "chez papi et mami"
+  }
+
+  day_on = Date.parse("Monday") + n
+  user_id = (n % 7 < 4) ? c1_parent1 : c1_parent2
+  title = titles[n.to_s]
+
+  Custody.create!(day_on: day_on, user: user_id, title: title)
+end
