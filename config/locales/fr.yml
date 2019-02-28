@@ -38,7 +38,7 @@ fr:
         text: "Description"
         day_on: "Date"
         image: "Télécharger une photo"
-      envent:
+      event:
         title: "Titre"
         text: "Description"
         image: "Télécharger une photo"

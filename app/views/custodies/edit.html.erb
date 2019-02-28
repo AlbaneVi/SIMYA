@@ -2,11 +2,14 @@
  <div class="row">
   <div class="col-sm-12 col-sm-offset-0">
 
+     <div class="card-form">
+
 
 
 <% if @day_on <= Date.today %>
 
-  <h1>Ajouter un événement </h1>
+  <h4>Ajouter un événement </h4>
+  <div class="form-control">
   <%= simple_form_for @custody do |f| %>
    <%= f.input     :title %>
    <%= f.input     :text %>
@@ -15,15 +18,19 @@
   <% end %>
 <% else %>
 
-  <h1>Modifier la garde</h1>
+  <h4>Modifier la garde</h4>
   <%= simple_form_for @custody do |f| %>
-   <%= f.input  :day_on%>
-   <%= f.input  :title %>
-   <%= f.input  :text %>
+   <div class="date"><%= f.input  :day_on%> </div>
+   <div class="description"><%= f.input  :title %>
+   <%= f.input  :text %></div>
    <%= f.button :submit, class: 'button' %>
   <% end %>
 <% end %>
 
+
+     </div> <!-- end form input -->
+    </div> <!-- end card form -->
+   </div> <!-- end intro -->
   </div> <!-- end col -->
  </div> <!-- end row -->
 </div> <!-- end container -->
