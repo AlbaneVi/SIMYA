@@ -21,6 +21,7 @@ gem 'mini_magick', '~> 4.3'
 gem 'awesome_print'
 
 gem "simple_calendar", "~> 2.0"
+gem 'awesome_print'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

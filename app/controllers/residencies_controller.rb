@@ -7,7 +7,6 @@ class ResidenciesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -45,4 +44,9 @@ class ResidenciesController < ApplicationController
   def set_residency
     @residency = Residency.find(params[:id])
   end
+
 end
+
+
+
+

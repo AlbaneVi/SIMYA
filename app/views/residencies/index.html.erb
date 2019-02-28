@@ -1,15 +1,9 @@
-<h1>index(list) de residencies</h1>
-<%= month_calendar do |date| %>
-  <%= date.day %>
-<% end %>
-
-
 <%= month_calendar events: @residencies do |date, residencies| %>
   <%= date %>
-
-  <% residencies.each do |meeting| %>
+  <% residencies.each do |residency| %>
     <div>
-      <%= meeting.user %>
+      <%= residency.user.email %>
     </div>
   <% end %>
 <% end %>
+
