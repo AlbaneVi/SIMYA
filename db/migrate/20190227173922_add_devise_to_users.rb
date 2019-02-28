@@ -35,6 +35,12 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
+
+      t.string      :first_name
+      t.string      :last_name
+      t.string      :phone
+      t.string      :avatar
+      t.references  :child
     end
 
     add_index :users, :email,                unique: true
