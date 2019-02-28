@@ -1,23 +1,26 @@
 
 
-<div class="card-form">
+<div class="show-container">
 
   <% if @day_on <= Date.today %>
 
+  <div class="edit-left">
+    <h4>Ajouter un événement </h4>
 
-  <div class="form-control">
-       <div class="edit-left">
-     <h4>Ajouter un événement </h4>
-       <%= simple_form_for @custody do |f| %>
-       <%= f.input     :title %>
-       <%= f.input     :text %>
-     </div>
-     <div class="edit-right">
-       <%=f.file_field :photo%>
-       <%= f.button    :submit, class: 'button' %>
-     <% end %>
-     </div>
-  </div>
+         <%= simple_form_for @custody do |f| %>
+         <div><%= f.input     :title %></div>
+         <div><%= f.input     :text %></div>
+    </div>
+
+
+
+  <div class="edit-right">
+
+      <div><%=f.file_field :photo %></div>
+      <div><%= f.button    :submit, class: 'button btn-edit' %></div>
+
+
+  </div><% end %>
 
     <% else %>
 
@@ -26,7 +29,7 @@
         <div class="date"><%= f.input  :day_on%> </div>
         <div class="titre"><%= f.input  :title %>
                       <%= f.input  :text %></div>
-      <%= f.button :submit, class: 'button' %>
+      <%= f.button :submit, class: 'button ' %>
       <% end %>
 
     <% end %>
