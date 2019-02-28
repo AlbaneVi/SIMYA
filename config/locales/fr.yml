@@ -34,6 +34,7 @@ fr:
   activerecord:
     attributes:
       custody:
+
         title: "Titre"
         text: "Description"
         day_on: "Date"
@@ -42,6 +43,7 @@ fr:
         title: "Titre"
         text: "Description"
         image: "Télécharger une photo"
+
 
     errors:
       messages:
