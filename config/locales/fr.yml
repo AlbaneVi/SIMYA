@@ -34,10 +34,16 @@ fr:
   activerecord:
     attributes:
       custody:
-        day_on: "Date"
+
         title: "Titre"
-        text: "Description "
-        photo: "Télécharger une photo"
+        text: "Description"
+        day_on: "Date"
+        image: "Télécharger une photo"
+      event:
+        title: "Titre"
+        text: "Description"
+        image: "Télécharger une photo"
+
 
     errors:
       messages:

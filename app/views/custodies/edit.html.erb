@@ -1,21 +1,39 @@
-<% if @day_on <= Date.today %>
 
-  <h1>Ajouter un événement </h1>
-  <%= simple_form_for @custody do |f| %>
-   <%= f.input     :title %>
-   <%= f.input     :text %>
-   <%=f.file_field :photo%>
-   <%= f.button    :submit, class: 'btn btn-primary' %>
-  <% end %>
-<% else %>
 
-  <h1>Modifier la garde</h1>
-  <%= simple_form_for @custody do |f| %>
-   <%= f.input  :day_on%>
-   <%= f.input  :title %>
-   <%= f.input  :text %>
-   <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
+<div class="card-form">
+
+  <% if @day_on <= Date.today %>
+
+
+  <div class="form-control">
+       <div class="edit-left">
+     <h4>Ajouter un événement </h4>
+       <%= simple_form_for @custody do |f| %>
+       <%= f.input     :title %>
+       <%= f.input     :text %>
+     </div>
+     <div class="edit-right">
+       <%=f.file_field :photo%>
+       <%= f.button    :submit, class: 'button' %>
+     <% end %>
+     </div>
+  </div>
+
+    <% else %>
+
+    <h4>Modifier la garde</h4>
+      <%= simple_form_for @custody do |f| %>
+        <div class="date"><%= f.input  :day_on%> </div>
+        <div class="titre"><%= f.input  :title %>
+                      <%= f.input  :text %></div>
+      <%= f.button :submit, class: 'button' %>
+      <% end %>
+
+    <% end %>
+
+
+</div> <!-- end card form -->
+
+
 
 
