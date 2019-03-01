@@ -10,9 +10,11 @@
   color: #d5d8dd;
   border: none;
   box-shadow: none;
+  margin-bottom:20px;
 }
+// }simple form class
 
-textarea.form-text {
+.form-text {
   width: 300px;
   height: 300px;
   background: #fff;
@@ -23,5 +25,35 @@ textarea.form-text {
   text-align: left;
   color: #d5d8dd;
   border: none;
-}
+ }
+// }simple form class
 
+.form-control-label.string.optional{
+  font-size: 12px;
+  margin: 0;
+  padding: 10px 0 0 10px;
+  text-align: left;
+  color: black;
+  font-weight:lighter;
+}
+// }simple form class
+
+.form-control-label.text.optional{
+  font-size: 12px;
+  margin: 0;
+  padding: 10px 0 0 10px;
+  text-align: left;
+  color: black;
+  font-weight:lighter;
+}
+// }simple form class
+
+.form-control-label.date.required{
+  font-size: 12px;
+  margin: 0;
+  padding: 10px 0 0 10px;
+  text-align: left;
+  color: black;
+  font-weight:lighter;
+}
+// }class simple form
