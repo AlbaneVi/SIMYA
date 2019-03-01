@@ -1,0 +1,44 @@
+.window-chat {
+  width: 200px;
+  height: auto;
+  border-radius: 25px;
+  background: #2d4059;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.message-user-1 {
+  width: 130px;
+  min-height: 40px;
+  border-radius: 0px 15px 15px 15px;
+  background: #fff;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.message-user-2 {
+  width: 130px;
+  min-height: 40px;
+  border-radius: 15px 0px 15px 15px;
+  background: #fff;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.title-chat {
+  color: #fff;
+  width: 105px;
+  text-align: left;
+  line-height: 25px;
+}
+.window-message-user-1 {
+  text-align: left;
+  float: left;
+  padding: 5px;
+}
+.window-message-user-2 {
+  text-align: right;
+  float: right;
+  padding: 5px;
+}
+
