@@ -14,6 +14,8 @@ class CustodiesController < ApplicationController
   end
 
   def show
+    @custody = Custody.find(params[:id])
+    @media = @custody.media
   end
 
   def new
@@ -30,6 +32,7 @@ class CustodiesController < ApplicationController
   end
 
   def edit
+    @day_on = @custody.day_on
   end
 
   def update

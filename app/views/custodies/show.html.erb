@@ -1,0 +1,40 @@
+
+
+<div class="show-container">
+
+<div class="body-left">
+
+  <div class="show-date">
+    <span class="day"> <%= @custody.day_on.strftime("%A") %></span>
+    <span class="date"> <%= @custody.day_on.day %></span>
+    <span class="month"> <%= @custody.day_on.strftime("%B") %></span>
+  </div>
+
+  <% @media.each do |medium| %>
+    <div class="show-photo"
+    style="background-image: url('<%= cl_image_path medium.photo, height: 300, width: 400, gravity: :faces, crop: :fill %>')">
+    </div>
+  <% end %>
+
+</div>
+
+<div class="body-right">
+
+  <div class="show-btn">
+    <%= link_to do  %>
+    <div class="btn-change-date-user-2"></div>
+    <% end %>
+    <div class="avatar-1"></div>
+    <%= link_to custodies_path do  %>
+    <div class="btn-close"></div>
+    <% end %>
+  </div>
+
+<h4> <%= @custody.title %></h4>
+<p> <%= @custody.text %> Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemque rei publicae tuis vel doloribus vel suspicionibus anteferre. Ille quidem fructum omnis ante actae vitae hodierno die maximum cepit, cum summo consensu senatus, tum iudicio tuo gravissimo et maximo. Ex quo profecto intellegis quanta in dato beneficio sit laus, cum in accepto sit tanta gloria.</p>
+
+</div>
+
+
+
+</div>
