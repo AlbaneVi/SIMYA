@@ -1,7 +1,9 @@
 .page-entiere {
   display: grid;
   grid-gap-rows: 20px;
+
   grid-gap-columns: 20px;
+
   justify-content: center;
   grid-template-columns: 55% 35%;
   grid-template-rows: repeat(4, 1fr);
@@ -23,11 +25,14 @@
 }
 
 .page-entiere .custody-cards .one-card {
+
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
   background-color: #bfd8d5;
   border-radius: 20px;
   grid-column: span 1;
   display: grid;
+
   grid-template-columns: 15% 25% 10% 10% 10% 30%;
   grid-template-rows: 50px 1fr 1fr;
   grid-gap-rows: 3px;
@@ -35,6 +40,8 @@
   "a b . g j h"
   "d d . e e ."
   ". . . f f .";
+
+
 
   #day-custody {
     grid-area: a;
@@ -51,23 +58,30 @@
   #button-custody-add {
     grid-area: g;
     margin-top:6px;
+
+
   }
 
   #button-custody-change {
     grid-area: j;
     margin-top:6px;
+
     margin-left: 10px;
+
   }
 
   #avatar-custody {
     grid-area: h;
     margin-top:6px;
     margin-left: 10px;
+
+
   }
 
   #user-custody {
     grid-area: d;
     margin-top:6px;
+
     margin-left: 10px;
   }
 

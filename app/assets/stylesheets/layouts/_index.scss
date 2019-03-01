@@ -4,7 +4,9 @@
 // @import "profile";
 @import "header";
 @import "custody";
+@import "chat";
 // For Symia:
+@import "_custodies";
 
 @import "edit_custody";
 
@@ -36,7 +38,6 @@ h3 {
 h4 {
   font-family: $headers-font;
   font-size: 30px;
-  text-transform: capitalize;
 }
 
 p {

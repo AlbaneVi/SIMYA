@@ -6,36 +6,32 @@
 
   <div class="edit-left">
     <h4>Ajouter un événement </h4>
-
-         <%= simple_form_for @custody do |f| %>
-         <div><%= f.input     :title %></div>
-         <div><%= f.input     :text %></div>
-    </div>
-
-
+      <%= simple_form_for @custody do |f| %>
+        <div><%= f.input :title %></div>
+        <div><%= f.input :text %></div>
+  </div>
 
   <div class="edit-right">
 
-      <div><%=f.file_field :photo %></div>
-      <div><%= f.button    :submit, class: 'button btn-edit' %></div>
+      <div class="add-photo">
+        <label id="image-label"for="photo">Télécharger une photo</label>
+          <%=f.file_field :image%>
+      </div>
+      <div><%= f.button :submit, class: 'button btn-edit' %></div>
+      <% end %>
+  </div>
 
-
-  </div><% end %>
-
-    <% else %>
-
-    <h4>Modifier la garde</h4>
+  <% else %>
+    <h4>Modifier le planning</h4>
       <%= simple_form_for @custody do |f| %>
-        <div class="date"><%= f.input  :day_on%> </div>
+        <div class="jour"><%= f.input  :day_on%> </div>
         <div class="titre"><%= f.input  :title %>
                       <%= f.input  :text %></div>
-      <%= f.button :submit, class: 'button ' %>
+      <%= f.button :submit, class: 'button btn-edit ' %>
       <% end %>
 
-    <% end %>
-
-
-</div> <!-- end card form -->
+  <% end %>
+</div> <!-- end container -->
 
 
 
