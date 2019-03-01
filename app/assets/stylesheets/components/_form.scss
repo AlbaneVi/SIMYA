@@ -10,6 +10,7 @@
   color: #d5d8dd;
   border: none;
   box-shadow: none;
+  margin-bottom:20px;
 }
 // }simple form class
 
@@ -46,3 +47,13 @@
   font-weight:lighter;
 }
 // }simple form class
+
+.form-control-label.date.required{
+  font-size: 12px;
+  margin: 0;
+  padding: 10px 0 0 10px;
+  text-align: left;
+  color: black;
+  font-weight:lighter;
+}
+// }class simple form

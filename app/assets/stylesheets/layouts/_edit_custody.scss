@@ -11,14 +11,18 @@
 
 .jour{
   margin-left: 30%;
+  margin-bottom: 10px !important;
   display:inline-block;
   width:25%;
+  clear:left;
 }
 
 .titre{
-  margin-top: 20px;
-  position: absolute;
-  top: 40px;
+  margin-top: 92px;
+  top: 1px;
+  float:left;
+  width:48%;
+  margin-left: -27%;
 }
 
 .button{
@@ -39,7 +43,9 @@
 }
 
 input.btn-edit {
-  display: table-footer-group;
+  top: 630px;
+  width: 206px;
+  margin-left: -127px;
 }
 // }button de modif custody
 
@@ -52,7 +58,7 @@ input.btn-edit {
 // }id de simple form
 
 #custody_text{
-  margin: 0px 16px 0px 0px;
+  margin: 0px 100px 0px 0px;
   width: 317px;
   height: 304px;
 }
@@ -68,4 +74,15 @@ input.btn-edit {
   text-align: left;
   color: black;
   font-weight:lighter;
+}
+
+.form-group.date.required.custody_day_on.form-group-valid{
+  margin-left: -62px;
+  margin-top: 120px;
+  display:inline-block;
+}
+// }class simple form
+
+#custody_day_on_3i{
+  margin-bottom:20px;
 }
