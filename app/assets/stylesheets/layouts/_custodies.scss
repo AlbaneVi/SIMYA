@@ -39,7 +39,7 @@
   grid-template-areas:
   "a b . g j h"
   "d d . e e ."
-  ". . . f f .";
+  ". . . e e .";
 
 
 
@@ -89,9 +89,7 @@
     grid-area: e;
   }
 
-  #text-custody {
-    grid-area: f;
-  }
+
 
 }
 
