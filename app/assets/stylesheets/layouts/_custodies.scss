@@ -1,24 +1,16 @@
 .page-entiere {
   display: grid;
+  grid-gap-rows: 20px;
   justify-content: center;
   grid-template-columns: 55% 35%;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
-  "t t"
   "c w"
   "c w"
   "c w"
   "c w";
 }
 
-.page-entiere .title {
-  grid-area: t;
-  font-family: $headers-font;
-}
-
-.page-entiere .title h2 {
-  font-family: $headers-font;
-}
 
 .page-entiere .custody-cards {
   grid-area: c;
@@ -33,6 +25,54 @@
   background-color: #bfd8d5;
   border-radius: 20px;
   grid-column: span 1;
+  display: grid;
+  grid-template-columns: 15% 15% 20% 20% 30%;
+  grid-template-rows: 50px 1fr 1fr;
+  grid-gap-rows: 3px;
+  grid-template-areas:
+  "a b g j h"
+  "d d e e ."
+  ". . . f f";
+
+  #day-custody {
+    grid-area: a;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  #date-custody {
+    grid-area: b;
+    padding-top: 10px;
+    font-size: 20px;
+  }
+
+  #button-custody-add {
+    grid-area: g;
+  }
+
+  #button-custody-change {
+    grid-area: j;
+    margin-top:6px;
+  }
+
+  #avatar-custody {
+    grid-area: h;
+    margin-top:6px;
+  }
+
+  #user-custody {
+    grid-area: d;
+    margin-top:6px;
+  }
+
+  #title-custody {
+    grid-area: e;
+  }
+
+  #text-custody {
+    grid-area: f;
+  }
+
 }
 
 .page-entiere .window-chat {

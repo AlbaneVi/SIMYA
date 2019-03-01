@@ -1,19 +1,23 @@
 <div class="page-entiere">
- <div class="title">
-   <h2>Simya</h2>
-   <div>A better steup makes kids happier</div>
- </div>
 
-   <div class="custody-cards">
-   <% @custodies2.each do |custody| %>
-       <p class="one-card"><%= custody.day_on.strftime("%A")%><%= custody.day_on.day%>
-      <br><%= User.find(custody.user_id).first_name %>
-       <br> <%= custody.title %>
-        <%= custody.text %>
-        <%= Medium.find_by(custody_id: custody.id) %>
 
-    </p>
-      <% end %>
+  <div class="custody-cards">
+  <% @custodies2.each do |custody| %>
+    <div class="one-card">
+      <p id="day-custody"><%= l(custody.day_on, format: "%A")%></p>
+      <p id="date-custody"><%= l(custody.day_on, format: "%d")%></p>
+      <p id="user-custody"><%= User.find(custody.user_id).first_name %></p>
+
+      <%= link_to edit_custody_path(custody) do  %>
+        <p class="btn-add" id="button-custody-add"></p><% end %>
+
+      <%= link_to edit_custody_path(custody) do  %>
+        <p class="btn-change-date-user-2" id="button-custody-change"></p><% end %>
+
+      <p id="title-custody"><%= custody.title %></p>
+      <p id="text-custody"><%= custody.text %></p>
+    </div>
+<% end %>
 
   </div>
 
