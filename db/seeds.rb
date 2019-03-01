@@ -70,5 +70,6 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
   Custody.create!(day_on: day_on, user: user_id, title: title, text: text)
 
+
 end
 
