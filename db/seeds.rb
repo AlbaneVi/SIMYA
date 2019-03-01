@@ -71,5 +71,7 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
   Medium.create! ({photo: "https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551358868/simya/photo-child-example.jpg",
                 custody_id: 44})
+  Medium.create! ({photo: "https://images.unsplash.com/photo-1458546450666-ebb1e605853f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2696&q=80",
+                custody_id: 44})
 end
 
