@@ -13,6 +13,7 @@ child1 = Child.create!(first_name: "child f_name", last_name: "child l_name", bi
 
 c1_parent1 = User.create!(first_name: "Toto",
                           last_name: "Logy",
+
                           email: "toto@gmail.com",
                           password: 'azerty',
                           phone: '0602030405',
