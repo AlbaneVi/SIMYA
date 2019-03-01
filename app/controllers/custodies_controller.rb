@@ -3,6 +3,14 @@ class CustodiesController < ApplicationController
 
   def index
     @custodies = Custody.all
+    @custodies2 = []
+    @custodies2 << @custodies.find_by(day_on: Date.parse("Monday"))
+    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 1))
+    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 2))
+    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 3))
+    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 4))
+    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 5))
+    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 6))
   end
 
   def show
@@ -32,6 +40,9 @@ class CustodiesController < ApplicationController
     redirect_to custody_path
   end
 
+
+
+
   private
 
   def set_custodies
@@ -41,4 +52,5 @@ class CustodiesController < ApplicationController
   def custodies_params
     params.require(:custody).permit(:title, :text, :day_on, :user)
   end
+
 end

@@ -8,8 +8,6 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
-
-
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.5.0'
@@ -21,7 +19,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 gem 'awesome_print'
 gem 'cloudinary', '~> 1.9.1'
-
+gem 'i18n'
 gem "simple_calendar", "~> 2.0"
 gem 'awesome_print'
 

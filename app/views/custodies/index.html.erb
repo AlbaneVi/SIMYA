@@ -1,0 +1,37 @@
+<div class="page-entiere">
+
+
+  <div class="custody-cards">
+  <% @custodies2.each do |custody| %>
+    <div class="one-card">
+      <p id="day-custody"><%= l(custody.day_on, format: "%A")%></p>
+      <p id="date-custody"><%= l(custody.day_on, format: "%d")%></p>
+      <p id="user-custody"><%= User.find(custody.user_id).first_name %></p>
+
+      <%= link_to edit_custody_path(custody) do  %>
+        <p class="btn-add" id="button-custody-add"></p><% end %>
+
+      <%= link_to edit_custody_path(custody) do  %>
+        <p class="btn-change-date-user-2" id="button-custody-change"></p><% end %>
+
+      <p id="title-custody"><%= custody.title %></p>
+      <p id="text-custody"><%= custody.text %></p>
+    </div>
+<% end %>
+
+  </div>
+
+
+
+
+
+  <div class="window-chat">
+    <p>youhou</p>
+  </div>
+
+
+
+</div>
+
+
+
