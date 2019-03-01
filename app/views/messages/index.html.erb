@@ -1,0 +1,27 @@
+<h3> Envoyer un message à <%= @receiver.first_name %></h3>
+
+<% @messages.each do |message| %>
+  <% if message.body %>
+    <p><%= time_ago_in_words(message.send_at) %></p>
+    <p><%= @sender.first_name %></p>
+    <p><%= message.body %></p>
+  <% end %>
+<% end %>
+
+
+<div>
+  <%= form_for @message do |f| %>
+    <div class="field">
+      <%= f.text_area :body,
+                      placeholder: "Tapez votre message ici.",
+                      class: "form-control" %>
+    </div>
+    <div>
+      <%= f.text_field :sender_id, value: current_user.id,
+                       type: "hidden"  %>
+      <%= f.text_field :receiver_id, value: @receiver.id,
+                       type: "hidden"  %>
+      <%= f.submit "Envoyer" %>
+    </div>
+  <% end %>
+</div>
