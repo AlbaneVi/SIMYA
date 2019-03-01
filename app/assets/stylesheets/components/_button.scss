@@ -16,6 +16,18 @@
   color: $color-font;
 }
 
+.chat {
+  background: $color-btn-chat;
+  width: 144px;
+  text-align: center;
+  margin-top: 27px;
+}
+.chat:hover {
+  background: #fff;
+  width: 144px;
+  color: $color-btn-chat;
+}
+
 .btn-change-date-user-2 {
   background-image: url(https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551370527/simya/btn-user-2-change.png);
   border-radius: 50%;
