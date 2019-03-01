@@ -25,6 +25,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem "simple_calendar", "~> 2.0"
 gem 'awesome_print'
 
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'dotenv-rails'
