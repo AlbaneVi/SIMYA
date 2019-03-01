@@ -19,14 +19,14 @@ Child.destroy_all
 
 child1 = Child.create!(first_name: "child f_name", last_name: "child l_name", birthday: 3.years.ago)
 
-c1_parent1 = User.create!(first_name: "c1p1 f_name",
+c1_parent1 = User.create!(first_name: "toto",
                           last_name: "c1p1 l_name",
                           email: "toto@gmail.com",
                           password: 'azerty',
                           phone: '0602030405',
                           child: child1)
 
-c1_parent2 = User.create!(first_name: "c1p2 f_name",
+c1_parent2 = User.create!(first_name: "g",
                           last_name: "c1p2 l_name",
                           email: "titi@gmail.com",
                           password: 'azerty',
