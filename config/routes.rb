@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :messages, only: [:index, :create]
-  root to: 'pages#home'
-
   resources :custodies, only: [:index, :show, :new, :create, :edit, :update]
   resources :media, only: [:index, :show, :new, :create, :destroy]
 end
