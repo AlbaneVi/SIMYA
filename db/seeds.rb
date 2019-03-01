@@ -1,4 +1,4 @@
-
+f
 
 puts "Destroying everything..."
 
@@ -70,7 +70,5 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
   Custody.create!(day_on: day_on, user: user_id, title: title, text: text)
 
-  Medium.create! ({photo: "https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551358868/simya/photo-child-example.jpg",
-                custody_id: 44})
 end
 
