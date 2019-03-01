@@ -1,0 +1,41 @@
+.page-entiere {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 55% 35%;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+  "t t"
+  "c w"
+  "c w"
+  "c w"
+  "c w";
+}
+
+.page-entiere .title {
+  grid-area: t;
+  font-family: $headers-font;
+}
+
+.page-entiere .title h2 {
+  font-family: $headers-font;
+}
+
+.page-entiere .custody-cards {
+  grid-area: c;
+  text-align: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns : repeat(2, 1fr);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.page-entiere .custody-cards .one-card {
+  background-color: #bfd8d5;
+  border-radius: 20px;
+  grid-column: span 1;
+}
+
+.page-entiere .window-chat {
+  grid-area: w;
+  text-align: center;
+}

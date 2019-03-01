@@ -1,0 +1,33 @@
+<div class="page-entiere">
+ <div class="title">
+   <h2>Simya</h2>
+   <div>A better steup makes kids happier</div>
+ </div>
+
+   <div class="custody-cards">
+   <% @custodies2.each do |custody| %>
+       <p class="one-card"><%= custody.day_on.strftime("%A")%><%= custody.day_on.day%>
+      <br><%= User.find(custody.user_id).first_name %>
+       <br> <%= custody.title %>
+        <%= custody.text %>
+        <%= Medium.find_by(custody_id: custody.id) %>
+
+    </p>
+      <% end %>
+
+  </div>
+
+
+
+
+
+  <div class="window-chat">
+    <p>youhou</p>
+  </div>
+
+
+
+</div>
+
+
+
