@@ -54,12 +54,12 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
 40.times do |n|
   titles = {
-    "43" => "Parc",
-    "62" => "Chez papi"
+    "3" => "Parc",
+    "42" => "Chez papi"
   }
   textes = {
-    "43" => "On est allé se promener au parc aujourd'hui",
-    "62" => "On a mangé chez papi"
+    "3" => "On est allé se promener au parc aujourd'hui",
+    "42" => "On a mangé chez papi"
   }
 
 
