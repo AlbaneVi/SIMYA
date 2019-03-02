@@ -2,7 +2,7 @@
 
 
   <div class="custody-cards">
-  <% @custodies2.each do |custody| %>
+  <% @custodies.each do |custody| %>
     <div class="one-card">
       <p id="day-custody"><%= l(custody.day_on, format: "%A")%></p>
       <p id="date-custody"><%= l(custody.day_on, format: "%d")%></p>
