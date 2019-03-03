@@ -12,7 +12,7 @@
   "c w";
 }
 
-.page-entiere .custody-cards {
+.custody-cards {
   grid-area: c;
   text-align: center;
   display: grid;
@@ -21,11 +21,18 @@
   grid-template-rows: repeat(4, 100px);
 }
 
-.page-entiere .custody-cards .one-card {
+.user-1 {
+  background-color: $color-user-1;
+}
+
+.user-2 {
+  background-color: $color-user-2;
+}
+
+.one-card {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   border-radius: 20px;
   grid-column: span 1;
-  background-color: $color-user-1;
   display: grid;
   grid-template-columns: 15% 25% 10% 10% 10% 30%;
   grid-template-rows: 50px 1fr 1fr;
@@ -77,7 +84,8 @@
 }
 
 
-.page-entiere .window-chat {
+.window-chat {
   grid-area: w;
   text-align: center;
 }
+
