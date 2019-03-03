@@ -1,9 +1,7 @@
 .page-entiere {
   display: grid;
   grid-gap-rows: 20px;
-
   grid-gap-columns: 20px;
-
   justify-content: center;
   grid-template-columns: 55% 35%;
   grid-template-rows: repeat(4, 1fr);
@@ -14,8 +12,7 @@
   "c w";
 }
 
-
-.page-entiere .custody-cards {
+.custody-cards {
   grid-area: c;
   text-align: center;
   display: grid;
@@ -24,15 +21,19 @@
   grid-template-rows: repeat(4, 100px);
 }
 
-.page-entiere .custody-cards .one-card {
+.user-1 {
+  background-color: $color-user-1;
+}
 
+.user-2 {
+  background-color: $color-user-2;
+}
+
+.one-card {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-
-  background-color: #bfd8d5;
   border-radius: 20px;
   grid-column: span 1;
   display: grid;
-
   grid-template-columns: 15% 25% 10% 10% 10% 30%;
   grid-template-rows: 50px 1fr 1fr;
   grid-gap-rows: 3px;
@@ -41,59 +42,50 @@
   "d d . e e ."
   ". . . e e .";
 
-
-
-  #day-custody {
+  .day-custody {
     grid-area: a;
     padding-top: 10px;
     padding-left: 10px;
   }
 
-  #date-custody {
+  .date-custody {
     grid-area: b;
     padding-top: 10px;
     font-size: 20px;
   }
 
-  #button-custody-add {
+  .button-custody-add {
     grid-area: g;
     margin-top:6px;
-
-
   }
 
-  #button-custody-change {
+  .button-custody-change {
     grid-area: j;
     margin-top:6px;
-
     margin-left: 10px;
-
   }
 
-  #avatar-custody {
+  .avatar-custody {
     grid-area: h;
     margin-top:6px;
     margin-left: 10px;
-
-
   }
 
-  #user-custody {
+  .user-custody {
     grid-area: d;
     margin-top:6px;
-
     margin-left: 10px;
   }
 
-  #title-custody {
+  .title-custody {
     grid-area: e;
   }
 
-
-
 }
 
-.page-entiere .window-chat {
+
+.window-chat {
   grid-area: w;
   text-align: center;
 }
+
