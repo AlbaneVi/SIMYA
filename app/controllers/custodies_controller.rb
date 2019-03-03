@@ -2,7 +2,11 @@ class CustodiesController < ApplicationController
   before_action :set_custodies, only: %i[show edit update]
 
   def index
-    @custodies = Custody.where(day_on: (Date.parse("Monday").to_time..(Date.parse("Monday").to_time + 6.day)))
+    params[:number] ||= 0
+    @lundicourant = Date.parse("Monday").to_time
+    @startdate = @lundicourant + (7 * params[:number].to_i).day
+    @enddate = @startdate + 6.day
+    @custodies = Custody.where(day_on: @startdate..@enddate)
   end
 
   def show
