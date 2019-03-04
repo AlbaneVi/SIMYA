@@ -9,7 +9,7 @@ User.destroy_all
 Child.destroy_all
 
 
-child1 = Child.create!(first_name: "child f_name", last_name: "child l_name", birthday: 3.years.ago)
+child1 = Child.create!(first_name: "Lily", last_name: "Logy Noe", birthday: 3.years.ago)
 
 c1_parent1 = User.create!(first_name: "Toto",
                           last_name: "Logy",
