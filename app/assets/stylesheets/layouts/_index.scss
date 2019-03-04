@@ -6,10 +6,11 @@
 @import "custody";
 @import "chat";
 // For Symia:
-@import "_custodies";
-
+@import "custodies";
 @import "edit_custody";
 @import "user";
+@import "monthscustodies";
+
 
 body {
   color: $color-font;
@@ -27,6 +28,7 @@ h2 {
   font-size: 15px;
   line-height: 0px;
   opacity: 0.6;
+  margin-top: 0px;
 }
 
 // h3 = date

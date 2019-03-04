@@ -1,12 +1,13 @@
 .custodies-container {
   width: 718px;
-  height: 560px;
+  height:75vh;
   margin: 0 auto;
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
   overflow: hidden;
 }
+
 
 .bg-user-1 {
 background: $color-user-1;
@@ -18,7 +19,7 @@ background: $color-user-2;
 
 .custody {
 width: 352px;
-min-height: 95.97px;
+min-height: 90px;
 max-height: 300px;
 border-radius: 25px;
 box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -26,7 +27,6 @@ margin-bottom: 10px;
 margin-right: 10px;
 padding: 5px 20px;
 position: relative;
-overflow: hidden;
 }
 
 #user-custody {
@@ -48,16 +48,14 @@ overflow: hidden;
 
 .text-container {
   width: 130px;
-
 }
 
 .text-container  p {
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
+
 .img-custody {
   width: 150px;
   height: 150px;
@@ -66,6 +64,7 @@ overflow: hidden;
   background-position: center;
   border:1px;
 }
+
 .img-container {
 
 }
@@ -74,6 +73,18 @@ overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+.month-container {
+    display: flex;
+    justify-content: center;
+}
+p.display-month {
+  background-color: #fff;
+  border: 1px solid $color-chat;
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 15px;
 }
 
 

@@ -2,7 +2,7 @@
   background-color: #bfd8d5;
   border-radius: 20px;
   width: 718px;
-  height:560px;
+  height: 560px;
   margin: 0 auto;
   padding: 10px 25px;
   margin-top:35px;
@@ -14,18 +14,15 @@
 }
 
 .button{
-  position: absolute;
+
   top: 600px;
   width: 135px;
  }
 // }button d'ajout d'event
-
-input.btn-edit {
-  top: 630px;
-  width: 206px;
-  margin-left: 0px;
+label {
+  font-size: 12px;
 }
-// }button de modif custody
+
 
 
 // }id de simple form
@@ -35,6 +32,13 @@ input.btn-edit {
 margin:0px;
 
   height: 250px;
+}
+#custody_image {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.label-photo {
+  margin-top: 20px;
 }
 // }id de simple form
 
@@ -50,13 +54,13 @@ margin:0px;
   font-weight:lighter;
 }
 
-.form-group.date.required.custody_day_on.form-group-valid{
+.form-group.date.required.custody_day_on.form-group-valid {
 padding: 0px;
 margin:0px;
 }
 // }class simple form
 
-#custody_day_on_3i, #custody_day_on_2i, #custody_day_on_1i{
+#custody_day_on_3i, #custody_day_on_2i, #custody_day_on_1i {
   width: 30%;
   display: inline-block;
 }
