@@ -26,7 +26,7 @@
         </li>
 
         <% if custody.media[0] == nil %>
-        
+
           <li><!-- button edit -->
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
@@ -68,7 +68,7 @@
 <% end %>
 <div class="btn-previous">
   <%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
-    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précèdente">
+    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
       <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
     </button>
   <% end %>
