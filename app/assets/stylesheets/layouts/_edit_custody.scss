@@ -22,10 +22,7 @@
 label {
   font-size: 12px;
 }
-input.btn-edit {
-margin-top: 10px;
-}
-// }button de modif custody
+
 
 
 // }id de simple form
@@ -57,13 +54,13 @@ margin:0px;
   font-weight:lighter;
 }
 
-.form-group.date.required.custody_day_on.form-group-valid{
+.form-group.date.required.custody_day_on.form-group-valid {
 padding: 0px;
 margin:0px;
 }
 // }class simple form
 
-#custody_day_on_3i, #custody_day_on_2i, #custody_day_on_1i{
+#custody_day_on_3i, #custody_day_on_2i, #custody_day_on_1i {
   width: 30%;
   display: inline-block;
 }
