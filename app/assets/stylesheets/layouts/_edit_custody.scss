@@ -19,11 +19,11 @@
   width: 135px;
  }
 // }button d'ajout d'event
-
+label {
+  font-size: 12px;
+}
 input.btn-edit {
-  top: 630px;
-  width: 206px;
-  margin-left: 0px;
+margin-top: 10px;
 }
 // }button de modif custody
 
@@ -35,6 +35,13 @@ input.btn-edit {
 margin:0px;
 
   height: 250px;
+}
+#custody_image {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.label-photo {
+  margin-top: 20px;
 }
 // }id de simple form
 

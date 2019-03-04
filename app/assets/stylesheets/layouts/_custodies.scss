@@ -8,6 +8,7 @@
   overflow: hidden;
 }
 
+
 .bg-user-1 {
 background: $color-user-1;
 }
@@ -74,5 +75,16 @@ overflow: hidden;
   justify-content: space-between;
   align-items: flex-start;
 }
-
+.month-container {
+    display: flex;
+    justify-content: center;
+}
+p.display-month {
+  background-color: #fff;
+  border: 1px solid $color-chat;
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 15px;
+}
 
