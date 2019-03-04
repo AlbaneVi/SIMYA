@@ -3,8 +3,11 @@
 <% if l(@custodies.first.day_on, format: "%B") != l(@custodies.last.day_on, format: "%B") %>
   ~ <%= l(@custodies.last.day_on, format: "%B").capitalize%>
     <% end %>
-  </h1>
+</h1>
 
+<button type="button" id="button-close-month" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button>
 
 <div class="calendrier">
 
@@ -20,6 +23,4 @@
 <% end %>
 </div>
 
-  <%= link_to root_path do  %>
-    <div class="button-circle"></div>
-    <% end %>
+

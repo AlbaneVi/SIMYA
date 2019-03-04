@@ -3,6 +3,9 @@
   margin-bottom: 30px;
   text-align: center;
 }
+
+
+
 .calendrier {
   width: 718px;
   height: 430px;
@@ -31,5 +34,11 @@
 
 .date-month {
   font-size: 14px;
+}
+
+#button-close-month {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
