@@ -35,9 +35,13 @@
   <% end %>
 </div>
 
+<%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
+  <p>semaine précédente</p>
+<% end %>
 
-
-
+<%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
+  <p>semaine suivante</p>
+<% end %>
 
   <div class="window-chat">
     <p>youhou</p>
