@@ -3,11 +3,13 @@ class CustodiesController < ApplicationController
 
   def index
     params[:number] ||= 0
+
     @custodies = Custody.where(day_on: start_date..end_date).sort
 
     if params[:range] == 'month'
       render :months
     end
+
   end
 
   def show
