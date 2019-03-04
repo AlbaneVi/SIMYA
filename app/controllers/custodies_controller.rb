@@ -6,7 +6,7 @@ class CustodiesController < ApplicationController
     @lundicourant = Date.parse("Monday").to_time
     @startdate = @lundicourant + (7 * params[:number].to_i).day
     @enddate = @startdate + 6.day
-    @custodies = Custody.where(day_on: @startdate..@enddate)
+    @custodies = Custody.where(day_on: @startdate..@enddate).sort
   end
 
   def show

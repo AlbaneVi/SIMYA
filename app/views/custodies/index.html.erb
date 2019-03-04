@@ -42,7 +42,7 @@
 
         <li>
           <div class="avatar"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          style="background-image:
         url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">  </div>
         </li>
       </ul>
@@ -50,12 +50,11 @@
       <div class="img-txt-container">
 
         <div class="img-container">
-          <% if custody.media[0] == nil %>
-            <p>
-          <% else %>
-            <p class="img-custody">
+          <% unless custody.media[0].nil? %>
+            <p class="img-custody" style="background-image:
+        url('<%= cl_image_path custody.media[0].photo.url, height: 300, width: 400, crop: :fill %>')">
+              </p>
           <% end %>
-              <%= @medium = custody.media[0]%></p>
         </div>
 
         <div class="text-container">
@@ -65,17 +64,26 @@
         </div>
 
       </div>
-      </div>
-<% end %>
 
+    </div>
 
-<%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
-  <p>semaine précédente</p>
 <% end %>
+<div class="btn-previous">
+  <%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
+    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précèdente">
+      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+    </button>
+  <% end %>
+</div>
 
-<%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
-  <p>semaine suivante</p>
-<% end %>
+<div class="btn-next">
+  <%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
+    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine suivante">
+      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button>
+  <% end %>
+</div>
+
 
 <div class="window-chat">
   <h4 class="title-chat">Chat</h4>
@@ -89,9 +97,9 @@
     <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-2.png" alt="" class="avatar ">
     <input type="text" class="message-user-2" >
   </div>
-
   <input type="submit" value="Envoyer" class="button chat">
 </div>
+
 
 
 
