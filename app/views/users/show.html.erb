@@ -1,11 +1,26 @@
-<div class="container-user">
-  <h1>Mon profil</h1>
+<div class="user-card">
+<!--   <div class="custody <%= custody_url == current_user ? 'bg-user-1' : "bg-user-2" %>">
+ -->
+  <div>
+    <%=cl_image_tag "#{@user.avatar}", class: "avatar"%>
+  </div>
 
- <%= @user.email %>
- <%= @user.first_name %>
- <%= @user.last_name %>
- <%= @user.phone%>
-  <%=cl_image_tag "#{@user.avatar}"%>
-  <li><%= @user.child_id%>
+  <div class="profile-title">
+    <h4>Mon profil</h4>
+  </div>
 
-</div> <!-- end container
+  <div class="user-information">
+
+    <h2>Nom:</h2>
+    <p><%= @user.last_name %></p>
+    <h2>Prénom:</h2>
+    <p><%= @user.first_name %></p>
+    <h2>Adresse email:</h2>
+    <p><%= @user.email %></p>
+    <h2>Numéro de téléphone:</h2>
+    <p><%= @user.phone%></p>
+  </div>
+  <!-- </div> -->
+   <%= link_to "Voir planning", custodies_path, class: 'button-container'%>
+</div> <!-- end card -->
+
