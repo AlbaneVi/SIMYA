@@ -12,7 +12,6 @@ class CustodiesController < ApplicationController
   def show
     @custody = Custody.find(params[:id])
     @media = @custody.media
-
   end
 
   def new
