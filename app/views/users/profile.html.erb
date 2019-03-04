@@ -1,0 +1,34 @@
+  <div class="profile-title">
+    <h4>Mon profil</h4>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-3 ">
+      <%= render 'shared/user_profile', user: @parent1, background_class: 'bg-user-1' %>
+    </div>
+
+
+    <div class="col-xs-3">
+      <div class="child">
+        <div class="child-info">
+            <div class="child-fullname">
+               <h2><strong>Prénom:</strong>    <%= @parent1.child.first_name %></h2>
+               <h2><strong>Nom:</strong>       <%= @parent1.child.last_name %></h2>
+            </div>
+            <div class="child-birth">
+               <h2><strong>Date de naissance:</strong> <%= @parent1.child.birthday %></h2>
+            </div>
+        </div>
+      </div>
+      <%=link_to"Modifier profil",edit_profile_path, class: 'chat'%>
+    </div>
+     <div class="col-md-6 col-lg-3">
+      <%= render 'shared/user_profile', user: @parent2, background_class: 'bg-user-2' %>
+    </div>
+  </div>
+
+  <%= link_to "Se deconnecter", destroy_user_session_path,method: :delete,class: 'chat' %>
+  <%= link_to "Voir planning", custodies_path, class: 'chat'%>
+
+
+
