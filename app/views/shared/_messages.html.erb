@@ -1,25 +1,24 @@
-<div class="window-chat">
+<div class="message">
   <h4 class="title-chat">
     Envoyer un message à <%= receiver.first_name %>
   </h4>
 
-<div class="window-message-user-1">
+<div class="message-user">
     <% messages.each do |message| %>
       <% if message.body %>
-        <div class="message-time">
-         <p><%=time_ago_in_words(message.send_at) %></p>
-        </div>
           <% if current_user == message.sender  %>
-            <div class="message-container-1">
-              <div class="message-user-2">
-                <p ><%= message.body %></p>
-              </div>
+            <div class="message-time" id="time-left">
+             <span><%=time_ago_in_words(message.send_at) %></span>
+            </div>
+            <div class="message-receiver">
+              <p ><%= message.body %></p>
             </div>
           <% else %>
-            <div class="message-container-2">
-              <div class="message-user-1">
-                <p ><%= message.body %></p>
-              </div>
+            <div class="message-time" id="time-right">
+              <span><%=time_ago_in_words(message.send_at) %></span>
+            </div>
+            <div class="message-sender">
+              <p ><%= message.body %></p>
             </div>
           <% end %>
       <% end %>
@@ -27,9 +26,10 @@
 </div>
 <div>
   <%= form_for message do |f| %>
-    <div class="field">
+    <div>
       <%= f.text_area :body,
                       placeholder: "Tapez votre message ici.",
+                      id: "t-message",
                       class: "form-control" %>
     </div>
     <div>
@@ -37,7 +37,7 @@
                        type: "hidden"  %>
       <%= f.text_field :receiver_id, value: receiver.id,
                        type: "hidden" %>
-      <%= f.submit "Envoyer" %>
+      <%= f.submit "Envoyer", class: "chat" %>
     </div>
   <% end %>
 </div>

@@ -20,12 +20,16 @@
   background: $color-btn-chat;
   width: 144px;
   text-align: center;
-  margin-top: 27px;
+  color: #fff;
+  border-radius: 12.5px;
+  width: 210px;
+  border: none;
 }
 .chat:hover {
   background: #fff;
   width: 144px;
   color: $color-btn-chat;
+  width: 210px;
 }
 
 .button-circle {

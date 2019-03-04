@@ -1,49 +1,59 @@
-.window-chat {
+.message {
   width: 240px;
-  height: 560px;
   border-radius: 25px;
   background: #2d4059;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   padding: 15px;
   margin-left: 35px;
-
   text-align: center;
   position: absolute;
   top: 148px;
   right: 10px;
   display:none;
 }
-.message-time {
-  color: #fff;
-}
-.message-user-1 {
-  width: 130px;
-  min-height: 40px;
-  border-radius: 0px 15px 15px 15px;
-  background: #fff;
-  margin-top: 5px;
-  font-size: 12px;
-}
-.message-user-2 {
-  width: 130px;
-  min-height: 40px;
-  border-radius: 15px 0px 15px 15px;
-  background: #fff;
-  margin-top: 5px;
-  font-size: 12px;
-}
 .title-chat {
   color: #fff;
   line-height: 25px;
 }
-.window-message-user-1 {
+.message-user {
+  width: 210px;
   text-align: left;
   float: left;
   padding: 5px;
+  overflow: scroll;
+  height:320px;
+  margin-top: 20px;
 }
-.window-message-user-2 {
-  text-align: right;
-  float: right;
+.message-time {
+  color: #fff;
+  font-size: 10px;
+}
+.message-sender {
+  width: 150px;
+  min-height: 35px;
+  border-radius: 0px 15px 15px 15px;
+  background: #fff;
+  margin-bottom: 15px;
+  font-size: 12px;
   padding: 5px;
 }
-
+.message-receiver {
+  width: 150px;
+  min-height: 35px;
+  border-radius: 15px 0px 15px 15px;
+  background: #fff;
+  margin-bottom: 15px;
+  font-size: 12px;
+  padding: 5px;
+  text-align: right;
+}
+#t-message {
+  width: 210px;
+  margin-bottom: 10px;
+}
+#time-left {
+text-align: left;
+}
+#time-right {
+text-align: right;
+}
