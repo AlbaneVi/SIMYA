@@ -59,7 +59,7 @@ class CustodiesController < ApplicationController
 
   def end_date
     if params[:range] == 'month'
-      current_monday + 1.month
+      current_monday + 27.day
     else
       start_date + 6.day
     end
