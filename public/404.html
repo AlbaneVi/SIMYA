@@ -1,67 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Oups, la page que vous cherchez n'existe pas.</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body {
+        background-color: #000;
+    }
+    .bg-img {
+        background: url(https://sejlar.com/error-pages/images/404.gif) no-repeat center center fixed;
+        background-size: cover;
+        background-color: #000;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: .5;
+        filter: alpha(opacity=50);
+    }
+    .content {
+        font-family: Avenir,Helvetica,sans-serif;
+        color: #fff;
+        background-color: none;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    a {
+        color: #666;
+    }
+    h1 {
+        font-size: 200px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    h1 .small {
+        font-size: 20px;
+    }
+    h2 {
+        margin-top: 0;
+        font-size: 24px;
+    }
+    .search {
+        position: relative;
+    }
+    .search input {
+        border: 1px solid #aaa;
+        min-width: 100px;
+        height: 52px;
+        padding: 11px 30px 12px 30px;
+        border-radius: 40px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background: transparent;
+    }
+    .search input:focus {
+        min-width: 350px;
+    }
+    .search button {
+        width: 40px;
+        height: 52px;
+        position: absolute;
+        right: 5px;
+        border: none;
+        background: transparent;
+    }
+    .search button i {
+        color: #999;
+        font-size: 22px;
+        line-height: 20px;
+    }
+    .search :focus {
+        outline-color: transparent;
+        outline-style: none;
+    }
+    .btn {
+        display: inline-block;
+        border: 1px solid #aaa;
+        border-radius: 40px;
+        padding: 15px 30px;
+        margin-right: 15px;
+        color: #999;
+    }
+    .btn:hover {
+        color: #e2e2e2;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    p {
+        margin: 0px 30px 30px 30px;;
+    }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+<body>
+  <div class="row content">
+    <div class="col-lg-12"></div>
+    <div class="col-lg-12">
+      <h1>404<span class="small">Page non trouvée</span></h1>
+      <h2>Oups, la page que vous cherchez n'existe pas.</h2>
+      <br>
+      <a class="btn" href="https://sejlar.com">Page d'accueil</a>
+      <span class="search">
+        <input placeholder="rechercher"></input>
+        <button><i class="fa fa-search"></i></button>
+      </span>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+  <div class="bg-img"></div>
 </body>
 </html>
