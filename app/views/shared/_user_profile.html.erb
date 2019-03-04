@@ -1,0 +1,22 @@
+<div id="user-show"class="user <%= background_class %>">
+
+  <div>
+    <%=cl_image_tag "#{user.avatar}", class: "avatar"%>
+  </div>
+
+  <div class="profile-title">
+    <h4>Mon profil</h4>
+  </div>
+
+  <div class="user-information">
+    <h2><strong>Nom:</strong></h2>
+    <p><%= user.last_name %></p>
+    <h2><strong>Prénom:</strong></h2>
+    <p><%= user.first_name %></p>
+    <h2><strong>Adresse email:</strong></h2>
+    <p><%= user.email %></p>
+    <h2><strong>Numéro de téléphone:</strong></h2>
+    <p><%= user.phone%></p>
+  </div>
+
+</div>

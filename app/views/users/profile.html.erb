@@ -1,0 +1,16 @@
+
+  <div class="row">
+    <div class="col-xs-6">
+      <%= render 'shared/user_profile', user: @parent1, background_class: 'bg-user-1' %>
+    </div>
+    <div class="col-xs-6">
+      <%= render 'shared/user_profile', user: @parent2, background_class: 'bg-user-2' %>
+    </div>
+  </div>
+
+  <h3>child</h3>
+
+  <%= link_to "Voir planning", custodies_path, class: 'button-container'%>
+  <%= link_to "Se deconnecter", destroy_user_session_path,method: :delete %>
+
+
