@@ -59,7 +59,7 @@
 
         <li>
         <div class="avatar "
-          style="background-image: url('<%= cl_image_path User.find(custody.user_id).avatar,  gravity: :faces, crop: :fill %>')"></div>
+          style="background-image: url('<%= cl_image_path custody.user.avatar,  gravity: :faces, crop: :fill %>')"></div>
         </li>
 
       </ul>
@@ -68,12 +68,12 @@
 
       <div class="img-txt-container">
       <div class="img-container">
-        <% if Custody.find(custody.id).media[0] == nil %>
+        <% if custody.media[0] == nil %>
         <p>
         <% else %>
         <p class="img-custody">
         <% end %>
-        <%= @medium = Custody.find(custody.id).media[0]%></p>
+        <%= Custody.find(custody.id).media[0]%></p>
 
       <!-- <img class="img-custody" src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551358868/simya/photo-child-example.jpg" alt="" > -->
       </div>
