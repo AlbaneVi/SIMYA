@@ -1,0 +1,17 @@
+
+<div class="day-month"><%= l(@custodies.first.day_on, format: "%B")%></div>
+<div class="day-month"><%= l(@custodies.last.day_on, format: "%B")%></div>
+
+<div class="monthsview"><% @custodies.each do |custody| %>
+
+    <div class="custodies-months <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
+
+      <div class="day-month"><%= l(custody.day_on, format: "%A")%></div>
+      <div class="date-month"><%= l(custody.day_on, format: "%d")%></div>
+      <div id="user-custody-month"><%= custody.user.first_name %></div>
+      <div class="avatar"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')"> </div>
+
+<% end %>
+</div>
