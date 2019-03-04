@@ -5,10 +5,17 @@
   </div>
 
   <div class="user-information">
-    <h2><strong>Nom:</strong><%= user.last_name %></h2>
-    <h2><strong>Prénom:</strong><%= user.first_name %></h2>
-    <h2><strong>Adresse email:</strong><%= user.email %></h2>
-    <h2><strong>Numéro de téléphone:</strong><%= user.phone%></h2>
+      <div class="user-fullname">
+        <h2><strong>Nom:</strong>      <%= user.last_name %></h2>
+        <h2><strong>Prénom:</strong>   <%= user.first_name %></h2>
+      </div>
+      <div class="user-email">
+        <h2><strong>Adresse email:</strong>           <%= user.email %></h2>
+      </div>
+      <div class="user-phone">
+        <h2><strong>Numéro de téléphone:</strong></h2>
+         <h2><%= user.phone%></h2>
+      </div>
   </div>
 
 </div>

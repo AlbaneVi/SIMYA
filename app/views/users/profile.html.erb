@@ -11,13 +11,13 @@
     <div class="col-xs-3">
       <div class="child">
         <div class="child-info">
-          <div class="chlid-fname">
-         <h2><strong>Prénom:</strong><%= @parent1.child.first_name %></h2>
-         </div>
-         <div class="child.lname">
-         <h2><strong>Nom:</strong><%= @parent1.child.last_name %></h2>
-         </div>
-          <h2><strong>Date de naissance:</strong><%= @parent1.child.birthday %></h2>
+            <div class="child-fullname">
+               <h2><strong>Prénom:</strong>    <%= @parent1.child.first_name %></h2>
+               <h2><strong>Nom:</strong>       <%= @parent1.child.last_name %></h2>
+            </div>
+            <div class="child-birth">
+               <h2><strong>Date de naissance:</strong> <%= @parent1.child.birthday %></h2>
+            </div>
         </div>
       </div>
     </div>
