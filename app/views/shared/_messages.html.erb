@@ -1,24 +1,24 @@
 <div class="window-chat">
   <h4 class="title-chat">
-    Envoyer un message à <%= @receiver.first_name %>
+    Envoyer un message à <%= receiver.first_name %>
   </h4>
 
 <div class="window-message-user-1">
   <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-1.png" alt="" class="avatar">
-    <% @messages.each do |message| %>
+    <% messages.each do |message| %>
       <% if message.body %>
         <p><%= time_ago_in_words(message.send_at) %></p>
           <% if current_user == message.sender  %>
             <div class="message-container-1">
               <div class="message-user-2">
-                <p><%= @sender.first_name %></p>
+                <p><%= sender.first_name %></p>
                 <p ><%= message.body %></p>
               </div>
             </div>
           <% else %>
             <div class="message-container-2">
               <div class="message-user-1">
-                <p><%= @sender.first_name %></p>
+                <p><%= sender.first_name %></p>
                 <p ><%= message.body %></p>
               </div>
             </div>
@@ -27,9 +27,8 @@
     <% end %>
 </div>
 
-
 <div>
-  <%= form_for @message do |f| %>
+  <%= form_for message do |f| %>
     <div class="field">
       <%= f.text_area :body,
                       placeholder: "Tapez votre message ici.",
@@ -38,29 +37,9 @@
     <div>
       <%= f.text_field :sender_id, value: current_user.id,
                        type: "hidden"  %>
-      <%= f.text_field :receiver_id, value: @receiver.id,
+      <%= f.text_field :receiver_id, value: receiver.id,
                        type: "hidden" %>
       <%= f.submit "Envoyer" %>
     </div>
   <% end %>
 </div>
-<!--
-  <div class="window-message-user-1">
-    <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-1.png" alt="" class="avatar">
-
-      <input type="text" class="message-user-1">
-
-  </div>
-
-  <div class="window-message-user-2">
-    <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-2.png" alt="" class="avatar ">
-
-      <input type="text" class="message-user-2" >
-
-  </div>
-
-  <input type="submit" value="Envoyer" class="button chat">
-
-</div>
-
- -->
