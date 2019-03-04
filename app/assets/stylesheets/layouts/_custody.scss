@@ -3,7 +3,8 @@
   width: 718px;
   height: 560px;
   margin: 0 auto;
-  background-color: $color-user-1;
+  background-color: #fff;
+  border: 1px solid $color-chat;
   border-radius: 25px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   padding: 10px 25px;
@@ -12,15 +13,17 @@
 }
 
 .body-left {
-  flex: 1 0 auto;
+
 }
 .body-right {
-  flex: 0 0 170px;
+  flex: 0 0 155px;
 }
 .body-right h4{
   margin-top: 35px;
 }
-
+.outline {
+  border: 1px solid $color-chat;
+}
 
 
 span {
@@ -42,17 +45,17 @@ span {
   font-size: 11px;
 }
 
-.show-photo{
+
+.show-photo img{
   width: 162px;
   height: 162px;
   border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  border:1px;
-  display: inline-block;
+  object-fit: cover;
 }
-.show-btn div {
-  display: inline-block;
+.show-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .show-btn {
   text-align: right;

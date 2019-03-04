@@ -3,33 +3,37 @@
 <div class="show-container">
 
 <div class="body-left">
-
   <div class="show-date">
-    <span class="day"> <%= @custody.day_on.strftime("%A") %></span>
-    <span class="date"> <%= @custody.day_on.day %></span>
-    <span class="month"> <%= @custody.day_on.strftime("%B") %></span>
+    <span class="day"><%= l(@custody.day_on, format: "%A")%></span>
+      <span class="date"><%= @custody.day_on.day %></span>
+      <span class="month"><%= l(@custody.day_on, format: "%B")%></span>
   </div>
 
   <% @media.each do |medium| %>
-    <div class="show-photo"
-    style="background-image: url('<%= cl_image_path medium.photo, height: 300, width: 400, gravity: :faces, crop: :fill %>')">
-    </div>
-
+    <a href="<%= "#{medium.photo}" %>">
+      <span class="show-photo">
+        <%= cl_image_tag("#{medium.photo}", width: 162, height: 162, crop: :fill) %>
+      </span>
+    </a>
   <% end %>
 
 </div>
 
 <div class="body-right">
 
-  <div class="show-btn">
-    <%= link_to do  %>
-    <div class="btn-change-date-user-2"></div>
-    <% end %>
-    <div class="avatar-1"></div>
-    <%= link_to custodies_path do  %>
-    <div class="btn-close"></div>
-    <% end %>
-  </div>
+  <ul class="list-inline show-btn ">
+    <li>
+      <div class="avatar outline" style="background-image: url('<%= cl_image_path @custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
+      </div>
+    </li>
+    <li>
+      <%= link_to custodies_path do  %>
+        <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      <% end %>
+    </li>
+  </ul>
 
 <h4> <%= @custody.title %></h4>
 <p> <%= @custody.text %></p>
