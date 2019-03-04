@@ -26,7 +26,7 @@
         </li>
 
         <% if custody.media[0] == nil %>
-        
+
           <li><!-- button edit -->
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
@@ -36,7 +36,7 @@
           </li>
         <% else %>
           <li><!-- button open  -->
-            <%= link_to edit_custody_path(custody) do  %>
+            <%= link_to custody_path(custody) do  %>
             <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir le moment">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </button>
