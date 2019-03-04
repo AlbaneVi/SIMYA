@@ -1,4 +1,5 @@
 class CustodiesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_custodies, only: %i[show edit update]
 
   def index
@@ -10,11 +11,16 @@ class CustodiesController < ApplicationController
       render :months
     end
 
+    @sender   = current_user
+    @receiver = User.where(child_id: current_user.child_id).where.not(id: current_user.id).first
+    p "rediriger vers 'inviter l'autre parent" if @receiver.nil?
+    @message  = Message.new
+    @messages = Message.all
   end
 
   def show
     @custody = Custody.find(params[:id])
-    @media = @custody.media
+    @media   = @custody.media
   end
 
   def new
