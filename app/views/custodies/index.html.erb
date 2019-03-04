@@ -17,7 +17,9 @@
       <span id="user-custody"><%= custody.user.first_name %></span>
 
       <ul class="list-inline button-container">
+
         <li>
+          <% if custody.day_on > Date.today %>
           <%= link_to edit_custody_path(custody) do  %>
             <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
               <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
@@ -25,8 +27,9 @@
           <% end %>
         </li>
 
-        <% if custody.media[0] == nil %>
+        <% else %>
 
+        <% if custody.media[0] == nil && custody.title == nil && custody.text ==nil %>
           <li><!-- button edit -->
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
@@ -42,8 +45,8 @@
             </button>
             <% end %>
           </li>
+          <% end %>
         <% end %>
-
         <li>
           <div class="avatar"
           style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">  </div>
@@ -64,23 +67,23 @@
         </div>
       </div>
     </div>
-
-<% end %>
-<div class="btn-previous">
-  <%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
-    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
-      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-    </button>
   <% end %>
-</div>
 
-<div class="btn-next">
-  <%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
-    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine suivante">
-      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-    </button>
-  <% end %>
-</div>
+  <div class="btn-previous">
+    <%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
+      <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+      </button>
+    <% end %>
+  </div>
+
+  <div class="btn-next">
+    <%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
+      <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine suivante">
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+      </button>
+    <% end %>
+  </div>
 
 
 
