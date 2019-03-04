@@ -2,15 +2,11 @@ class CustodiesController < ApplicationController
   before_action :set_custodies, only: %i[show edit update]
 
   def index
-    @custodies = Custody.all
-    @custodies2 = []
-    @custodies2 << @custodies.find_by(day_on: Date.parse("Monday"))
-    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 1))
-    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 2))
-    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 3))
-    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 4))
-    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 5))
-    @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 6))
+    params[:number] ||= 0
+    @lundicourant = Date.parse("Monday").to_time
+    @startdate = @lundicourant + (7 * params[:number].to_i).day
+    @enddate = @startdate + 6.day
+    @custodies = Custody.where(day_on: @startdate..@enddate)
   end
 
   def show
@@ -39,9 +35,6 @@ class CustodiesController < ApplicationController
     @custody.update(custodies_params)
     redirect_to custody_path
   end
-
-
-
 
   private
 

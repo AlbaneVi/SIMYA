@@ -1,101 +1,78 @@
-.page-entiere {
-  display: grid;
-  grid-gap-rows: 20px;
-
-  grid-gap-columns: 20px;
-
-  justify-content: center;
-  grid-template-columns: 55% 35%;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-  "c w"
-  "c w"
-  "c w"
-  "c w";
+.custodies-container {
+  width: 718px;
+  height: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  overflow: hidden;
 }
 
-
-.page-entiere .custody-cards {
-  grid-area: c;
-  text-align: center;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns : repeat(2, 1fr);
-  grid-template-rows: repeat(4, 100px);
+.bg-user-1 {
+background: $color-user-1;
 }
 
-.page-entiere .custody-cards .one-card {
+.bg-user-2 {
+background: $color-user-2;
+}
 
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+.custody {
+width: 352px;
+min-height: 95.97px;
+max-height: 300px;
+border-radius: 25px;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+margin-bottom: 10px;
+margin-right: 10px;
+padding: 5px 20px;
+position: relative;
+overflow: hidden;
+}
 
-  background-color: #bfd8d5;
-  border-radius: 20px;
-  grid-column: span 1;
-  display: grid;
+#user-custody {
+  display: none;
+}
 
-  grid-template-columns: 15% 25% 10% 10% 10% 30%;
-  grid-template-rows: 50px 1fr 1fr;
-  grid-gap-rows: 3px;
-  grid-template-areas:
-  "a b . g j h"
-  "d d . e e ."
-  ". . . f f .";
+.list-inline > li {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
+.button-container {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
 
+.text-container {
+  width: 130px;
+}
 
-  #day-custody {
-    grid-area: a;
-    padding-top: 10px;
-    padding-left: 10px;
-  }
+.text-container  p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  #date-custody {
-    grid-area: b;
-    padding-top: 10px;
-    font-size: 20px;
-  }
+.img-custody {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border:1px;
+}
 
-  #button-custody-add {
-    grid-area: g;
-    margin-top:6px;
-
-
-  }
-
-  #button-custody-change {
-    grid-area: j;
-    margin-top:6px;
-
-    margin-left: 10px;
-
-  }
-
-  #avatar-custody {
-    grid-area: h;
-    margin-top:6px;
-    margin-left: 10px;
-
-
-  }
-
-  #user-custody {
-    grid-area: d;
-    margin-top:6px;
-
-    margin-left: 10px;
-  }
-
-  #title-custody {
-    grid-area: e;
-  }
-
-  #text-custody {
-    grid-area: f;
-  }
+.img-container {
 
 }
 
-.page-entiere .window-chat {
-  grid-area: w;
-  text-align: center;
+.img-txt-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+
+

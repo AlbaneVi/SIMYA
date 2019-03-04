@@ -7,11 +7,13 @@
   height: 25px;
   background: #fff;
   text-align: left;
-  color: #d5d8dd;
-  border: none;
+
+  border: 1px solid #d5d8dd;
   box-shadow: none;
   margin-bottom:20px;
 }
+
+
 // }simple form class
 
 .form-text {
@@ -21,9 +23,9 @@
   border-radius: 25px;
   font-size: 12px;
   margin: 0;
-  padding: 10px 0 0 10px;
+  padding: 0px;
   text-align: left;
-  color: #d5d8dd;
+
   border: none;
  }
 // }simple form class
@@ -31,7 +33,7 @@
 .form-control-label.string.optional{
   font-size: 12px;
   margin: 0;
-  padding: 10px 0 0 10px;
+  padding: 0px;
   text-align: left;
   color: black;
   font-weight:lighter;
@@ -41,7 +43,7 @@
 .form-control-label.text.optional{
   font-size: 12px;
   margin: 0;
-  padding: 10px 0 0 10px;
+  padding: 0px;
   text-align: left;
   color: black;
   font-weight:lighter;
@@ -51,9 +53,27 @@
 .form-control-label.date.required{
   font-size: 12px;
   margin: 0;
-  padding: 10px 0 0 10px;
+  padding: 0px;
   text-align: left;
   color: black;
   font-weight:lighter;
 }
 // }class simple form
+
+.main-container {
+  width: 718px;
+  height: 560px;
+  margin: 0 auto;
+}
+.form-container {
+  width: 352px;
+  height: 560px;
+  background-color: #fff;
+  border: 1px solid $color-chat;
+  max-height: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 5px 20px;
+  margin: 0 auto;
+
+}

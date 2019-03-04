@@ -1,36 +1,98 @@
-<div class="page-entiere">
 
+<div class="custodies-container">
 
-  <div class="custody-cards">
-  <% @custodies2.each do |custody| %>
-    <div class="one-card">
-      <p id="day-custody"><%= l(custody.day_on, format: "%A")%></p>
-      <p id="date-custody"><%= l(custody.day_on, format: "%d")%></p>
-      <p id="user-custody"><%= User.find(custody.user_id).first_name %></p>
+  <% @custodies.each do |custody| %>
 
-      <%= link_to edit_custody_path(custody) do  %>
-        <p class="btn-add-user-2" id="button-custody-add"></p><% end %>
+    <div class="custody <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
 
+      <span class="day"><%= l(custody.day_on, format: "%A")%></span>
+      <span class="date"><%= l(custody.day_on, format: "%d")%></span>
+      <span class="month"><%= l(custody.day_on, format: "%B")%></span>
+      <span id="user-custody"><%= custody.user.first_name %></span>
 
-      <%= link_to edit_custody_path(custody) do  %>
-        <p class="btn-change-date-user-2" id="button-custody-change"></p><% end %>
+      <ul class="list-inline button-container">
+        <li>
+          <%= link_to edit_custody_path(custody) do  %>
+            <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
+              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+          <% end %>
+        </li>
 
-      <p id="title-custody"><%= custody.title %></p>
-      <p id="text-custody"><%= custody.text %></p>
-    </div>
+        <% if custody.media[0] == nil %>
+
+          <li><!-- button edit -->
+            <%= link_to edit_custody_path(custody) do  %>
+              <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              </button>
+            <% end %>
+          </li>
+        <% else %>
+
+          <li><!-- button open  -->
+            <%= link_to edit_custody_path(custody) do  %>
+            <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir le moment">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+            <% end %>
+          </li>
+
+        <% end %>
+
+        <li>
+          <div class="avatar"
+          style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">  </div>
+        </li>
+      </ul>
+
+      <div class="img-txt-container">
+
+        <div class="img-container">
+          <% if custody.media[0] == nil %>
+            <p>
+          <% else %>
+            <p class="img-custody">
+          <% end %>
+              <%= @medium = custody.media[0]%></p>
+        </div>
+
+        <div class="text-container">
+          <h4><%= custody.title %></h4>
+          <p id="text-custody"><%= custody.text %></p>
+
+        </div>
+
+      </div>
+      </div>
 <% end %>
 
+
+<%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
+  <p>semaine précédente</p>
+<% end %>
+
+<%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
+  <p>semaine suivante</p>
+<% end %>
+
+<div class="window-chat">
+  <h4 class="title-chat">Chat</h4>
+
+  <div class="window-message-user-1">
+    <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-1.png" alt="" class="avatar">
+    <input type="text" class="message-user-1">
   </div>
 
-
-
-
-
-  <div class="window-chat">
-    <p>youhou</p>
+  <div class="window-message-user-2">
+    <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-2.png" alt="" class="avatar ">
+    <input type="text" class="message-user-2" >
   </div>
 
-
-
+  <input type="submit" value="Envoyer" class="button chat">
 </div>
+
+
+
+
 

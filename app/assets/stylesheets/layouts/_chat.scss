@@ -1,5 +1,5 @@
 .window-chat {
-  width: 350px;
+  width: 200px;
   height: auto;
   border-radius: 25px;
   background: #2d4059;
@@ -8,6 +8,9 @@
   margin-left: 35px;
 
   text-align: center;
+  position: absolute;
+  top: 148px;
+  right: 10px;
 
 }
 .message-user-1 {
@@ -28,8 +31,8 @@
 }
 .title-chat {
   color: #fff;
-  width: 105px;
-  text-align: left;
+
+
   line-height: 25px;
 }
 .window-message-user-1 {
