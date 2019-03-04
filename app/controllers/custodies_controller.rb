@@ -3,6 +3,7 @@ class CustodiesController < ApplicationController
 
   def index
     @custodies = Custody.all
+
     @custodies2 = []
     @custodies2 << @custodies.find_by(day_on: Date.parse("Monday"))
     @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 1))
@@ -11,11 +12,14 @@ class CustodiesController < ApplicationController
     @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 4))
     @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 5))
     @custodies2 << @custodies.find_by(day_on: (Date.parse("Monday") + 6))
+
+
   end
 
   def show
     @custody = Custody.find(params[:id])
     @media = @custody.media
+
   end
 
   def new
