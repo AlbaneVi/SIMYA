@@ -1,6 +1,6 @@
-<div class="user-card">
-<!--   <div class="custody <%= custody_url == current_user ? 'bg-user-1' : "bg-user-2" %>">
- -->
+
+  <div id="user-show"class="custody <%= @user == current_user ? 'bg-user-1' : "bg-user-2" %>">
+
   <div>
     <%=cl_image_tag "#{@user.avatar}", class: "avatar"%>
   </div>
@@ -20,7 +20,8 @@
     <h2>Numéro de téléphone:</h2>
     <p><%= @user.phone%></p>
   </div>
-  <!-- </div> -->
-   <%= link_to "Voir planning", custodies_path, class: 'button-container'%>
-</div> <!-- end card -->
+</div>
+  <%= link_to "Voir planning", custodies_path, class: 'button-container'%>
+  <%= link_to "Se deconnecter", destroy_user_session_path,method: :delete %>
+
 
