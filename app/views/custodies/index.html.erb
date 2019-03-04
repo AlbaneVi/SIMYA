@@ -26,7 +26,7 @@
         </li>
 
         <% if custody.media[0] == nil %>
-
+        
           <li><!-- button edit -->
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
@@ -35,7 +35,6 @@
             <% end %>
           </li>
         <% else %>
-
           <li><!-- button open  -->
             <%= link_to edit_custody_path(custody) do  %>
             <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir le moment">
@@ -43,18 +42,15 @@
             </button>
             <% end %>
           </li>
-
         <% end %>
 
         <li>
           <div class="avatar"
-
           style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">  </div>
         </li>
       </ul>
 
       <div class="img-txt-container">
-
         <div class="img-container">
           <% unless custody.media[0].nil? %>
             <p class="img-custody" style="background-image:
@@ -62,15 +58,11 @@
               </p>
           <% end %>
         </div>
-
         <div class="text-container">
           <h4><%= custody.title %></h4>
           <p id="text-custody"><%= custody.text %></p>
-
         </div>
-
       </div>
-
     </div>
 
 <% end %>
@@ -92,22 +84,7 @@
 
 
 
-
-<div class="window-chat">
-  <h4 class="title-chat">Chat</h4>
-
-  <div class="window-message-user-1">
-    <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-1.png" alt="" class="avatar">
-    <input type="text" class="message-user-1">
-  </div>
-
-  <div class="window-message-user-2">
-    <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-2.png" alt="" class="avatar ">
-    <input type="text" class="message-user-2" >
-  </div>
-  <input type="submit" value="Envoyer" class="button chat">
-</div>
-
+<%= render 'shared/messages', receiver: @receiver, sender: @sender,  message: @message, messages: @messages %>
 
 
 
