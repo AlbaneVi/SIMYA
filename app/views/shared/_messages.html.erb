@@ -4,21 +4,20 @@
   </h4>
 
 <div class="window-message-user-1">
-  <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-1.png" alt="" class="avatar">
     <% messages.each do |message| %>
       <% if message.body %>
-        <p><%= time_ago_in_words(message.send_at) %></p>
+        <div class="message-time">
+         <p><%=time_ago_in_words(message.send_at) %></p>
+        </div>
           <% if current_user == message.sender  %>
             <div class="message-container-1">
               <div class="message-user-2">
-                <p><%= sender.first_name %></p>
                 <p ><%= message.body %></p>
               </div>
             </div>
           <% else %>
             <div class="message-container-2">
               <div class="message-user-1">
-                <p><%= sender.first_name %></p>
                 <p ><%= message.body %></p>
               </div>
             </div>
@@ -26,7 +25,6 @@
       <% end %>
     <% end %>
 </div>
-
 <div>
   <%= form_for message do |f| %>
     <div class="field">
@@ -43,3 +41,6 @@
     </div>
   <% end %>
 </div>
+</div>
+
+
