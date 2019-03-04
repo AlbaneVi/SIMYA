@@ -6,9 +6,9 @@
 @import "custody";
 @import "chat";
 // For Symia:
-@import "_custodies";
-
+@import "custodies";
 @import "edit_custody";
+@import "monthscustodies";
 
 body {
   color: $color-font;

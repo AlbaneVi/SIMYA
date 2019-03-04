@@ -15,7 +15,7 @@ class CustodiesController < ApplicationController
     @receiver = User.where(child_id: current_user.child_id).where.not(id: current_user.id).first
     p "rediriger vers 'inviter l'autre parent" if @receiver.nil?
     @message  = Message.new
-    @messages = Message.all
+    @messages = Message.last(4)
   end
 
   def show
@@ -65,7 +65,7 @@ class CustodiesController < ApplicationController
 
   def end_date
     if params[:range] == 'month'
-      current_monday + 1.month
+      current_monday + 27.day
     else
       start_date + 6.day
     end
