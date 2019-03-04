@@ -32,14 +32,6 @@ class CustodiesController < ApplicationController
     else
       render :new
     end
-
-    @message  = Message.new(message_params)
-    @user     = User.find(params[:message][:receiver_id])
-    if @message.save!
-      redirect_to messages_path
-    else
-      @message
-    end
   end
 
   def edit
@@ -59,9 +51,5 @@ class CustodiesController < ApplicationController
 
   def custodies_params
     params.require(:custody).permit(:title, :text, :day_on, :user)
-  end
-
-  def message_params
-    params.require(:message).permit(:body, :sender_id, :receiver_id)
   end
 end
