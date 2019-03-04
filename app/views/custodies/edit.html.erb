@@ -1,36 +1,38 @@
 
 
-<div class="show-container">
+<div class="main-container">
+
+
 
   <% if @day_on <= Date.today %>
+<div class="form-container">
 
-  <div class="edit-left">
     <h4>Ajouter un événement </h4>
       <%= simple_form_for @custody do |f| %>
         <div><%= f.input :title %></div>
         <div><%= f.input :text %></div>
-  </div>
-
-  <div class="edit-right">
-
-      <div class="add-photo">
+        <div >
         <label id="image-label"for="photo">Télécharger une photo</label>
           <%=f.file_field :image%>
+        </div>
+        <div><%= f.button :submit, class: 'button btn-edit' %></div>
+      <% end %>
       </div>
-      <div><%= f.button :submit, class: 'button btn-edit' %></div>
-      <% end %>
-  </div>
 
-  <% else %>
-    <h4>Modifier le planning</h4>
-      <%= simple_form_for @custody do |f| %>
-        <div class="jour"><%= f.input  :day_on%> </div>
-        <div class="titre"><%= f.input  :title %>
-                      <%= f.input  :text %></div>
-      <%= f.button :submit, class: 'button btn-edit ' %>
-      <% end %>
+      <% else %>
+<div class="form-container">
 
-  <% end %>
+        <h4>Modifier le planning</h4>
+
+          <%= simple_form_for @custody do |f| %>
+            <%= f.input  :title %>
+            <%= f.input  :text %>
+            <%= f.input  :day_on %>
+            <%= f.button :submit, class: 'button' %>
+          <% end %>
+
+      <% end %>
+</div>
 </div> <!-- end container -->
 
 

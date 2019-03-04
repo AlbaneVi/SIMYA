@@ -9,40 +9,16 @@
   display:flex;
 }
 
-.jour{
-  margin-left: 30%;
-  margin-bottom: 10px !important;
-  display:inline-block;
-  width:25%;
-  clear:left;
-}
-
-.titre{
-  margin-top: 92px;
-  top: 1px;
-  float:left;
-  width:48%;
-  margin-left: -27%;
+.form-container > h4 {
+  text-align: center;
 }
 
 .button{
-
   position: absolute;
   top: 600px;
   width: 135px;
  }
 // }button d'ajout d'event
-
-
-.edit-left{
-  width:50%;
-}
-
-.edit-right{
-  width:50%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 input.btn-edit {
   top: 630px;
@@ -51,18 +27,14 @@ input.btn-edit {
 }
 // }button de modif custody
 
-#custody_image{
-  position: absolute;
-  top: 326px;
-  width: 262px;
-  margin: 44px;
-}
+
 // }id de simple form
 
 #custody_text{
-  margin: 0px 100px 0px 0px;
-  width: 317px;
-  height: 304px;
+
+margin:0px;
+
+  height: 250px;
 }
 // }id de simple form
 
@@ -72,19 +44,32 @@ input.btn-edit {
   width: 262px;
   margin: 45px;
   font-size: 12px;
-  padding: 0px 0 0 32px;
+  padding: 0px 0 0 0px;
   text-align: left;
   color: black;
   font-weight:lighter;
 }
 
 .form-group.date.required.custody_day_on.form-group-valid{
-  margin-left: -62px;
-  margin-top: 120px;
-  display:inline-block;
+padding: 0px;
+margin:0px;
 }
 // }class simple form
 
-#custody_day_on_3i{
-  margin-bottom:20px;
+#custody_day_on_3i, #custody_day_on_2i, #custody_day_on_1i{
+  width: 30%;
+  display: inline-block;
+}
+div.date {
+  padding: 0px;
+}
+.custody_day_on {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.form-group {
+  margin-bottom: 0px;
+}
+textarea.form-control {
+  padding: 5px;
 }
