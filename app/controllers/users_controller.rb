@@ -7,8 +7,13 @@ class UsersController < ApplicationController
     @parent2 = current_user.ex_partner
   end
 
-  def edit
+  def edit_profile
     #set_user
+  end
+
+  def update
+    @parent1.update
+    @parent2.update
   end
 
   private

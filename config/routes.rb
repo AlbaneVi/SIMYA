@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   resources :custodies, only: [:index, :show, :new, :create, :edit, :update]
   resources :media, only: [:index, :show, :new, :create, :destroy]
-  resources :users, except: [:index, :new, :create, :show]
+  resources :users, except: [:index, :new, :create, :show, :edit]
 
   get :profile, to: 'users#profile'
+  get :edit_profile, to: 'users#edit_profile'
 
 end

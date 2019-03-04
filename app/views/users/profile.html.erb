@@ -20,14 +20,15 @@
             </div>
         </div>
       </div>
+      <%=link_to"Modifier profil",edit_profile_path, class: 'chat'%>
     </div>
      <div class="col-md-6 col-lg-3">
       <%= render 'shared/user_profile', user: @parent2, background_class: 'bg-user-2' %>
     </div>
   </div>
 
-<!--   <div><%= link_to "Se deconnecter", destroy_user_session_path,method: :delete %>
-  <%= link_to "Voir planning", custodies_path%></div>
+  <%= link_to "Se deconnecter", destroy_user_session_path,method: :delete,class: 'chat' %>
+  <%= link_to "Voir planning", custodies_path, class: 'chat'%>
 
- -->
+
 
