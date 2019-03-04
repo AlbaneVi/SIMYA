@@ -3,10 +3,13 @@ class CustodiesController < ApplicationController
 
   def index
     params[:number] ||= 0
-    @lundicourant = Date.parse("Monday").to_time
-    @startdate = @lundicourant + (7 * params[:number].to_i).day
-    @enddate = @startdate + 6.day
-    @custodies = Custody.where(day_on: @startdate..@enddate).sort
+
+    @custodies = Custody.where(day_on: start_date..end_date).sort
+
+    if params[:range] == 'month'
+      render :months
+    end
+
   end
 
   def show
@@ -46,4 +49,23 @@ class CustodiesController < ApplicationController
     params.require(:custody).permit(:title, :text, :day_on, :user)
   end
 
+  def start_date
+    if params[:range] == 'month'
+      current_monday
+    else
+      current_monday + (7 * params[:number].to_i).day
+    end
+  end
+
+  def end_date
+    if params[:range] == 'month'
+      current_monday + 1.month
+    else
+      start_date + 6.day
+    end
+  end
+
+  def current_monday
+    Date.parse("Monday").to_time
+  end
 end
