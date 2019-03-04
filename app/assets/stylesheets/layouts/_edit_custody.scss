@@ -14,14 +14,17 @@
 }
 
 .button{
-
+  position: absolute;
+  top: 600px;
+  width: 135px;
  }
 // }button d'ajout d'event
 
-
-
-
-
+input.btn-edit {
+  top: 630px;
+  width: 206px;
+  margin-left: 0px;
+}
 // }button de modif custody
 
 

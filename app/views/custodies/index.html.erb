@@ -2,28 +2,16 @@
               <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
             </button> -->
 
+<div class="custodies-container">  
+<div class="custody-cards">
+  <% @custodies.each do |custody| %>
 
+    <div class="one-card <%= custody.user == current_user ? 'user-1' : "user-2" %>">
+      <p class="day-custody"><%= l(custody.day_on, format: "%A")%></p>
+      <p class="date-custody"><%= l(custody.day_on, format: "%d")%></p>
+      <p class="user-custody"><%= User.find(custody.user_id).first_name %></p>
 
-
-
-
-
-<div class="custodies-container">
-
-  <% @custodies2.each do |custody| %>
-
-    <% if User.find(custody.user_id).first_name == 'Toto' %>
-   <div class='custody bg-user-1'>
-      <% else %>
-         <div class='custody bg-user-2'>
-      <% end %>
-
-      <span class="day"><%= custody.day_on.strftime("%A") %></span>
-      <span class="date"><%= custody.day_on.day %></span>
-      <span class="month"> <%= custody.day_on.strftime("%B") %></span>
-      <span id="user-custody"><%= User.find(custody.user_id).first_name %></span>
-
-      <ul class="list-inline button-container">
+ <ul class="list-inline button-container">
 
         <li>
           <%= link_to edit_custody_path(custody) do  %>
@@ -32,8 +20,7 @@
             </button>
           <% end %>
         </li>
-
-        <% if Custody.find(custody.id).media[0] == nil %>
+ <% if Custody.find(custody.id).media[0] == nil %>
 
         <li><!-- button edit -->
           <%= link_to edit_custody_path(custody) do  %>
@@ -64,7 +51,15 @@
 
       </ul>
 
+        <%= link_to edit_custody_path(custody) do  %>
+          <p class="btn-change-date-user-2" class="button-custody-change"></p>
+        <% end %>
+      <% end %>
 
+        <p class="title-custody"><a href="custodies/4"><%= custody.title %></a></p>
+    </div>
+  <% end %>
+</div>
 
       <div class="img-txt-container">
       <div class="img-container">
@@ -96,6 +91,15 @@
     <img src="https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-1.png" alt="" class="avatar">
 
       <input type="text" class="message-user-1">
+
+<%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
+  <p>semaine précédente</p>
+<% end %>
+
+<%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
+  <p>semaine suivante</p>
+<% end %>
+
 
   </div>
 
