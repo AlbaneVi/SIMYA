@@ -9,11 +9,11 @@ const initChat = () => {
     return
   }
 
-  btn.addEventListener("onClick", (event) => {
+  btn.addEventListener("click", (event) => {
     chat.style.display ="";
 });
 
-  btn.addEventListener("onClick", (event) => {
+  btn.addEventListener("click", (event) => {
     chat.classList.toggle("display");
     btn.style.display = "none";
 
