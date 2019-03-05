@@ -47,8 +47,12 @@
           <% end %>
         <% end %>
         <li>
+          <%= link_to profile_path  do  %>
           <div class="avatar"
-          style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">  </div>
+          style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
+          </div>
+          <% end %>
+          </a>
         </li>
       </ul>
 
