@@ -4,17 +4,17 @@ class UsersController < ApplicationController
 
   def profile
     @parent1 = current_user
-    @parent2 = current_user.ex_partner
+    @parent2 = current_user.fixed_ex_partner
   end
 
   def edit_profile
-    #set_user
+    @parent1 = current_user
   end
 
-  def update
-    @parent1.update
-    @parent2.update
-  end
+  # def update
+  #   @parent1.update
+  #   @parent2.update
+  # end
 
   private
 

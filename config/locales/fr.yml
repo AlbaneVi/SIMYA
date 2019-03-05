@@ -43,6 +43,8 @@ fr:
         title: "Titre"
         text: "Description"
         image: "Télécharger une photo"
+      user:
+         phone: "Téléphone"
 
 
     errors:

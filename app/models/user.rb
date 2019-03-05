@@ -12,4 +12,17 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def class_css
+    case email
+    when "toto@gmail.com"
+      'bg-user-1'
+    when "titi@gmail.com"
+      'bg-user-2'
+    end
+  end
+
+  def fixed_ex_partner
+    child.parents.where.not(id: id).last
+  end
 end
