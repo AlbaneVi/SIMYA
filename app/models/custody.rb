@@ -12,4 +12,9 @@ class Custody < ApplicationRecord
   def poor?
     media.blank? && title.blank? && text.blank?
   end
+
+  def switch
+    self.user = user.child.parents.where.not(id: user.id).first
+    save
+  end
 end
