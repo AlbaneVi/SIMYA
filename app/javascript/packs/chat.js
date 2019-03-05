@@ -13,7 +13,7 @@ const initChat = () => {
     chat.style.display ="";
 });
 
-  btn.addEventListener("click", (event) => {
+  btn.addEventListener("onClick", (event) => {
     chat.classList.toggle("display");
     btn.style.display = "none";
 
