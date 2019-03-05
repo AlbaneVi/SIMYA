@@ -1,1 +1,8 @@
-coucou
+
+<%= simple_form_for @parent1 do |f| %>
+        <%= f.input :email %>
+        <%= f.input :phone %>
+        <label class="label-avatar" for="label-avatar">Télécharger une photo</label>
+        <%= f.file_field :avatar %>
+        <%= f.button :submit, label= "Editer un moment", class: 'button btn-edit' %>
+<% end %>
