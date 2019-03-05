@@ -1,6 +1,6 @@
 
 
-<div class="show-container">
+<div class="show-container <%= @custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
 
 <div class="body-left">
   <div class="show-date">

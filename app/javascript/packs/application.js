@@ -1,4 +1,7 @@
 import "bootstrap";
 import "./btn";
-import "./chat";
+import initChat from "./chat";
 import "./photoswipe";
+
+
+initChat()
