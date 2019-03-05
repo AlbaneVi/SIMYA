@@ -2,6 +2,7 @@ class Custody < ApplicationRecord
   belongs_to :user
 
   has_many :media, dependent: :destroy
+  accepts_nested_attributes_for :media
 
   validates :day_on, presence: true
 

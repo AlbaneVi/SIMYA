@@ -21,11 +21,6 @@ class MediaController < ApplicationController
     end
   end
 
-  def destroy
-    @medium.destroy
-    redirect_to medium_path
-  end
-
   private
 
   def set_media
@@ -33,6 +28,8 @@ class MediaController < ApplicationController
   end
 
   def media_params
-    params.require(:medium).permit(:photo, :custody_id)
+    params.require(:medium)
+          .permit(:photo,
+                  :custody_id)
   end
 end
