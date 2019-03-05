@@ -2,6 +2,12 @@
 
 <div class="main-container">
 
+<%= link_to custodies_path do  %>
+<button type="button" id="button-close-month" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button>
+
+<% end %>
   <% if @custody.day_on > Date.today %>
     <div class="form-container">
       <%= simple_form_for @custody do |f| %>
