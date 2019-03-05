@@ -38,15 +38,16 @@
       const objDiv = document.querySelector(".message-user");
       objDiv.scrollTop = objDiv.scrollHeight;
     }
-
     scrollToBottom();
+
 
     App['child_id_<%= current_user.child.id %>'] = App.cable.subscriptions.create(
         { channel: 'ChatRoomsChannel', child_id: <%= current_user.child.id %> },
         { received: (data) => {
           document.querySelector(".message-user").insertAdjacentHTML('beforeend', data.message_partial);
-          scrollToBottom()
+          scrollToBottom();
         }
+
       })
   </script>
 <% end %>

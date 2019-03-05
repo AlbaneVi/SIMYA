@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
     @user     = User.find(params[:message][:receiver_id])
     @message.save!
     broadcast_message
-    redirect_to root_path
   end
 
   private
