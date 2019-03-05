@@ -12,15 +12,15 @@
       <div class="child">
         <div class="child-info">
             <div class="child-fullname">
-               <h2><strong>Prénom:</strong>    <%= @parent1.child.first_name %></h2>
-               <h2><strong>Nom:</strong>       <%= @parent1.child.last_name %></h2>
+               <p><strong>Prénom:</strong>    <%= @parent1.child.first_name %></p>
+
+               <p><strong>Nom:</strong>       <%= @parent1.child.last_name %></p>
             </div>
             <div class="child-birth">
-               <h2><strong>Date de naissance:</strong> <%= @parent1.child.birthday %></h2>
+               <p><strong>Date de naissance:</strong> <%= @parent1.child.birthday %></p>
             </div>
         </div>
       </div>
-      <%=link_to"Modifier profil",edit_profile_path, class: 'chat'%>
     </div>
      <div class="col-md-6 col-lg-3">
       <%= render 'shared/user_profile', user: @parent2, background_class: 'bg-user-2' %>

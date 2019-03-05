@@ -1,12 +1,9 @@
 .user-information{
-  height:228px;
+  height:177px;
   width:216px;
   position:absolute;
   margin-top: 66px;
   text-align: center;
-  // display:flex;
-  // flex-flow: row wrap;
-  // align-content:space-around;
 }
 
 
@@ -25,9 +22,7 @@
   display: flex;
 }
 
-// a{
-//   margin-top:558px;
-// }
+
 
 .user-avatar{
   width: 43px;
@@ -41,7 +36,7 @@
 
 .child{
   width:256px;
-  height: 254px;
+  height: 156px;
   margin: 0 auto;
   border-radius: 25px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -53,11 +48,11 @@
   height:74px;
   width:216px;
   position:absolute;
-  margin-top: 66px;
-  display:flex;
-  flex-flow: row wrap;
-  align-content:space-around;
+  margin-top: 29px;
+  text-align: center;
 }
+
+
 
 .row{
   margin-right: -183px;
