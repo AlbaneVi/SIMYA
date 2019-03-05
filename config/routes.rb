@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get :profile, to: 'users#profile'
   get :edit_profile, to: 'users#edit_profile'
 
+
 end

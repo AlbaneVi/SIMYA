@@ -1,4 +1,5 @@
-
+<div class="main-container">
+  <div class="form-container">
 <%= simple_form_for @parent1 do |f| %>
         <%= f.input :email %>
         <%= f.input :phone %>
@@ -6,3 +7,5 @@
         <%= f.file_field :avatar %>
         <%= f.button :submit, label= "Modifier mon profil", class: 'button btn-edit' %>
 <% end %>
+ </div> <!-- end form container -->
+</div> <!-- end container -->
