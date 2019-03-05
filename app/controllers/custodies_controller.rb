@@ -37,12 +37,11 @@ class CustodiesController < ApplicationController
   end
 
   def edit
-    @day_on = @custody.day_on
   end
 
   def update
     @custody.update(custodies_params)
-    redirect_to custody_path
+    redirect_to custodies_path
   end
 
   private
@@ -52,7 +51,7 @@ class CustodiesController < ApplicationController
   end
 
   def custodies_params
-    params.require(:custody).permit(:title, :text, :day_on, :user)
+    params.require(:custody).permit(:title, :text, :day_on, :user_id)
   end
 
   def start_date
