@@ -1,11 +1,11 @@
 .custodies-container {
-  width: 718px;
-  height:75vh;
-  margin: 0 auto;
+  width: 500px;
+  margin: auto auto;
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
   overflow: hidden;
+  justify-content: center;
 }
 
 
@@ -18,9 +18,9 @@ background: $color-user-2;
 }
 
 .custody {
-width: 352px;
-min-height: 90px;
-max-height: 300px;
+width: 500px;
+min-height: 120px;
+max-height: 350px;
 border-radius: 10px;
 box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.05);
 margin-bottom: 10px;
