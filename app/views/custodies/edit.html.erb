@@ -2,18 +2,19 @@
 
 <div class="main-container">
 
-  <% if @day_on > Date.today %>
+  <% if @custody.day_on > Date.today %>
     <div class="form-container">
       <%= simple_form_for @custody do |f| %>
         <%= f.input  :day_on %>
+        <%= f.association :user, label_method: :first_name, input_html: { value:  opposite_parent_for(@custody, current_user).id }, as: :hidden %>
         <%= f.button :submit, label= "Modifier le planning", class: 'button' %>
       <% end %>
     </div>
   <% else %>
     <div class="form-container">
-      <h4><%= l(@day_on, format: "%A").capitalize %>
-          <%= @day_on.day %>
-          <%= l(@day_on, format: "%B")%>
+      <h4><%= l(@custody.day_on, format: "%A").capitalize %>
+          <%= @custody.day_on.day %>
+          <%= l(@custody.day_on, format: "%B")%>
       </h4>
 
       <%= simple_form_for @custody do |f| %>

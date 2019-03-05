@@ -9,7 +9,6 @@
   <% @custodies.each do |custody| %>
 
     <div class="custody <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
-
       <span class="day"><%= l(custody.day_on, format: "%A")%></span>
       <span class="date"><%= custody.day_on.day %></span>
       <span class="month"><%= l(custody.day_on, format: "%B")%></span>
@@ -17,18 +16,18 @@
 
       <ul class="list-inline button-container">
 
-        <li>
-          <% if custody.day_on > Date.today %>
-          <%= link_to edit_custody_path(custody) do  %>
-            <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
-              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-            </button>
-          <% end %>
-        </li>
+        <% if custody.future? %>
+          <li>
+            <%= link_to edit_custody_path(custody) do  %>
+              <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              </button>
+            <% end %>
+          </li>
 
         <% else %>
 
-        <% if custody.media[0] == nil && custody.title == nil && custody.text ==nil %>
+        <% if custody.poor? %>
           <li><!-- button edit -->
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
