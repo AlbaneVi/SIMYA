@@ -1,10 +1,10 @@
 <div class="month-container">
 <%= link_to custodies_path(range: "month") do %>
   <p class="display-month" data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
-
-<%= l(Date.today, format: "%A %e %B %Y") %>
+<%= l(Date.today, format: "%B %Y") %>
   </p>
 <% end %>
+<p class="display-month">Aujourd'hui</p>
 </div>
 
 <div class="custodies-container">
@@ -13,9 +13,9 @@
 
     <% if custody.day_on == Date.today %>
       <div class="custody today <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
-      <span class="day white"><%= l(custody.day_on, format: "%A")%></span>
-      <span class="date white"><%= custody.day_on.day %></span>
-      <span class="month white"><%= l(custody.day_on, format: "%B")%></span>
+      <span class="day font-size"><%= l(custody.day_on, format: "%A")%></span>
+      <span class="date font-size"><%= custody.day_on.day %></span>
+      <span class="month font-size"><%= l(custody.day_on, format: "%B")%></span>
       <span id="user-custody"><%= custody.user.first_name %></span>
 
     <% else %>
@@ -51,19 +51,13 @@
           <% end %>
         <% end %>
         <li>
-          <% if custody.day_on == Date.today %>
-            <%= link_to profile_path  do  %>
-            <div class="<%= custody.user == current_user ? 'outline-user-1' : "outline-user-2" %>" data-toggle="tooltip" data-placement="bottom" title="Voir mon profil"
-            style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
-            </div>
-            <% end %>
-          <% else %>
+
             <%= link_to profile_path  do  %>
             <div class="avatar" data-toggle="tooltip" data-placement="bottom" title="Voir mon profil"
             style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
             </div>
             <% end %>
-          <% end %>
+
 
 
 
@@ -73,13 +67,12 @@
       <div class="img-txt-container">
         <div class="text-container">
 
-          <% if custody.day_on == Date.today %>
-          <h4 class="white"><%= custody.title %></h4>
-          <p id="text-custody" class="white"><%= custody.text %></p>
-          <% else %>
+
+
+
           <h4><%= custody.title %></h4>
           <p id="text-custody"><%= custody.text %></p>
-          <% end %>
+
 
         </div>
         <div class="img-container">

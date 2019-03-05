@@ -98,7 +98,9 @@ position: relative;
 }
 .month-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 350px;
+    margin: 0 auto;
 }
 p.display-month {
   background-color: #fff;
@@ -108,9 +110,12 @@ p.display-month {
   padding: 5px 20px;
   font-size: 25px;
   text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
 }
+
 .today {
-  background-color: $color-chat;
+  border: 1px solid $color-chat;
 }
 .mark-today {
 width: 8px;
