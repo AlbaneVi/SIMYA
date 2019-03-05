@@ -6,26 +6,12 @@
     <div class="message-user">
         <% messages.each do |message| %>
           <% if message.body %>
-              <% if current_user == message.sender  %>
-                <div class="message-time" id="time-right">
-                 <span><%=time_ago_in_words(message.send_at) %></span>
-                </div>
-                <div class="message-receiver">
-                  <p ><%= message.body %></p>
-                </div>
-              <% else %>
-                <div class="message-time" id="time-left">
-                  <span><%=time_ago_in_words(message.send_at) %></span>
-                </div>
-                <div class="message-sender">
-                  <p ><%= message.body %></p>
-                </div>
-              <% end %>
+            <%= render "shared/message", message: message, user: current_user %>
           <% end %>
         <% end %>
     </div>
     <div>
-      <%= form_for message do |f| %>
+      <%= form_for message, remote: true do |f| %>
         <div>
           <%= f.text_area :body,
                           placeholder: "Tapez votre message ici.",
@@ -43,3 +29,24 @@
     </div>
   </div>
 
+
+
+<% content_for :after_js do %>
+  <script>
+
+    function scrollToBottom() {
+      const objDiv = document.querySelector(".message-user");
+      objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
+    scrollToBottom();
+
+    App['child_id_<%= current_user.child.id %>'] = App.cable.subscriptions.create(
+        { channel: 'ChatRoomsChannel', child_id: <%= current_user.child.id %> },
+        { received: (data) => {
+          document.querySelector(".message-user").insertAdjacentHTML('beforeend', data.message_partial);
+          scrollToBottom()
+        }
+      })
+  </script>
+<% end %>
