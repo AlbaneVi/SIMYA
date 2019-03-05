@@ -74,3 +74,17 @@ right: 10px;
   font-size: 12px;
   font-family: $body-font;
 }
+.button-open-chat {
+  position: absolute;
+  bottom:0;
+  right:0;
+  width: 42px;
+  height: 42px;
+  border-radius: 25px 25px 0px 25px;
+  color: #fff;
+  background-color: $color-font;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
