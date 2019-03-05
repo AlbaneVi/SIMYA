@@ -37,6 +37,7 @@ class CustodiesController < ApplicationController
   end
 
   def edit
+    @custody.media.build
   end
 
   def update
@@ -57,7 +58,12 @@ class CustodiesController < ApplicationController
   end
 
   def custodies_params
-    params.require(:custody).permit(:title, :text, :day_on, :user_id)
+    params.require(:custody)
+          .permit(:title,
+                  :text,
+                  :day_on,
+                  :user_id,
+                  media_attributes: [:photo])
   end
 
   def start_date
