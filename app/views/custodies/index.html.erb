@@ -18,7 +18,7 @@
 
         <% if custody.future? %>
           <li>
-            <%= link_to edit_custody_path(custody) do  %>
+            <%= link_to switch_custody_path(custody), method: :patch do  %>
               <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
                 <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>
               </button>

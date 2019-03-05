@@ -1,6 +1,6 @@
 class CustodiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_custodies, only: %i[show edit update]
+  before_action :set_custodies, only: %i[show edit update switch]
 
   def index
     params[:number] ||= 0
@@ -42,6 +42,12 @@ class CustodiesController < ApplicationController
   def update
     @custody.update(custodies_params)
     redirect_to custodies_path
+  end
+
+  # PATCH /custodies/:id/switch
+  def switch
+    @custody.switch
+    redirect_back(fallback_location: custodies_path)
   end
 
   private

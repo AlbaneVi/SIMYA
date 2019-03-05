@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   root to: 'custodies#index'
 
 
-  resources :custodies, only: [:index, :show, :new, :create, :edit, :update]
+  resources :custodies, only: [:index, :show, :new, :create, :edit, :update] do
+    member do
+      patch 'switch'
+    end
+  end
   resources :messages
   resources :media, only: [:index, :show, :new, :create, :destroy]
   resources :users, except: [:index, :new, :create, :show, :edit]
