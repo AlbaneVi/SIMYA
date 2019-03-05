@@ -1,0 +1,15 @@
+<% if user == message.sender  %>
+  <div class="message-time" id="time-right">
+   <span><%=time_ago_in_words(message.send_at) %></span>
+  </div>
+  <div class="message-receiver">
+    <p ><%= message.body %></p>
+  </div>
+<% else %>
+  <div class="message-time" id="time-left">
+    <span><%=time_ago_in_words(message.send_at) %></span>
+  </div>
+  <div class="message-sender">
+    <p ><%= message.body %></p>
+  </div>
+<% end %>
