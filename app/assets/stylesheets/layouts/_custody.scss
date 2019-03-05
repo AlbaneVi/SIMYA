@@ -1,4 +1,6 @@
-
+.justify-center{
+  text-align: center;
+}
 .show-container {
   width: 718px;
   height: 75vh;
@@ -34,15 +36,18 @@ span {
 }
 
 .day {
-  font-size: 11px;
+  font-size: 25px;
+  text-transform: capitalize;
 
 }
 .date {
-  font-size: 30px;
-  padding: 0px 10px;
+  font-size: 25px;
+  padding: 0px 2px;
 }
 .month {
-  font-size: 11px;
+  font-size: 25px;
+  text-transform: capitalize;
+
 }
 
 
