@@ -20,7 +20,7 @@
           <li>
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
-                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>
               </button>
             <% end %>
           </li>
@@ -47,11 +47,11 @@
         <% end %>
         <li>
           <%= link_to profile_path  do  %>
-          <div class="avatar"
+          <div class="avatar" data-toggle="tooltip" data-placement="bottom" title="Voir mon profil"
           style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
           </div>
           <% end %>
-          </a>
+
         </li>
       </ul>
 
