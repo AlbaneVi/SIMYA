@@ -12,8 +12,7 @@ class UsersController < ApplicationController
   end
 
   # def update
-  #   @parent1.update
-  #   @parent2.update
+
   # end
 
   private

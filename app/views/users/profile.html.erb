@@ -1,20 +1,10 @@
-  <div class="profile-title">
-    <h4>Mon profil</h4>
-  </div>
-
-
 <div class="user-container">
   <%= render 'shared/user_profile', user: @parent1, background_class: @parent1.class_css %>
     <div class="child-container">
       <div class="child">
         <div class="child-info">
-          <div class="child-fullname">
-              <p><strong>Prénom:</strong>    <%= @parent1.child.first_name %></p>
-              <p><strong>Nom:</strong>       <%= @parent1.child.last_name %></p>
-          </div>
-          <div class="child-birth">
-              <p><strong>Date de naissance:</strong> <%= @parent1.child.birthday %></p>
-          </div>
+          <p><strong> <%= @parent1.child.first_name %>  <%= @parent1.child.last_name %></strong></p>
+          <p><strong><%= @parent1.child.birthday %></strong></p>
         </div>
       </div>
 

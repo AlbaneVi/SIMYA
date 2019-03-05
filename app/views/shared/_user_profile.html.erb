@@ -6,15 +6,13 @@
 
   <div class="user-information">
       <div class="user-fullname">
-        <p><strong>Nom:</strong>      <%= user.last_name %></p>
-
-        <p><strong>Prénom:</strong>   <%= user.first_name %></p>
+        <p><strong><%= user.last_name %>     <%= user.first_name %></strong></p>
       </div>
       <div class="user-email">
-        <p><strong>Email:</strong>           <%= user.email %></p>
+        <p><strong><%= user.email %></strong></p>
       </div>
       <div class="user-phone">
-        <p><strong>Téléphone:</strong> <%= user.phone %> </p>
+        <p><strong><%= user.phone %></strong></p>
       </div>
   </div>
 </div>
