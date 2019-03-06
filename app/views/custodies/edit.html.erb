@@ -1,14 +1,19 @@
-
+<!-- Métadonnées -->
+<%= content_for(:meta_title) do  %>
+  Editer un moment
+<% end %>
 
 <div class="main-container">
 
-<%= link_to custodies_path do  %>
-<button type="button" id="button-close-month" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-</button>
+  <!-- Bouton fermeture du formulaire -->
+  <%= link_to custodies_path do  %>
+    <button type="button" id="button-close-month" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+  <% end %>
 
-<% end %>
   <% if @custody.day_on > Date.today %>
+
     <div class="form-container">
       <%= simple_form_for @custody do |f| %>
         <%= f.input  :day_on %>
@@ -17,30 +22,22 @@
       <% end %>
     </div>
   <% else %>
+
     <div class="form-container ">
       <div class="justify-center">
-      <span class="day "><%= l(@custody.day_on, format: "%A")%></span>
-      <span class="date"><%= @custody.day_on.day %></span>
-      <span class="month"><%= l(@custody.day_on, format: "%B")%></span>
+        <span class="day "><%= l(@custody.day_on, format: "%A")%></span>
+        <span class="date"><%= @custody.day_on.day %></span>
+        <span class="month"><%= l(@custody.day_on, format: "%B")%></span>
       </div>
-
-
-        <%= content_for(:meta_title) do  %>
-          Modifier l'événement
-        <% end %>
-
 
       <%= simple_form_for @custody do |f| %>
         <%= f.input :title %>
         <%= f.input :text %>
         <%= f.file_field :media, multiple: true  %>
         <%= f.button :submit, label= "Editer un moment", class: 'button btn-edit' %>
-
       <% end %>
-
     </div>
   <% end %>
-
 </div> <!-- end container -->
 
 
