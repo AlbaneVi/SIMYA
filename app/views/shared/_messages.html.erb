@@ -1,33 +1,45 @@
-  <div class="message">
-    <h4 class="title-chat">
-      Envoyer un message à <%= receiver.first_name %>
-    </h4>
+<div class="message">
 
-    <div class="message-user">
-        <% messages.each do |message| %>
-          <% if message.body %>
-            <%= render "shared/message", message: message, user: current_user %>
-          <% end %>
+<button type="button"
+        class="button-close-chat btn-close-chat"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Fermer le chat" >
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button>
+
+  <h4 class="title-chat">
+    Envoyer un message à <%= receiver.first_name %>
+  </h4>
+
+  <div class="message-user">
+      <% messages.each do |message| %>
+        <% if message.body %>
+          <%= render "shared/message", message: message, user: current_user %>
         <% end %>
-    </div>
-    <div>
-      <%= form_for message, remote: true do |f| %>
-        <div>
-          <%= f.text_area :body,
-                          placeholder: "Tapez votre message ici.",
-                          id: "t-message",
-                          class: "form-control" %>
-        </div>
-        <div>
-          <%= f.text_field :sender_id, value: current_user.id,
-                           type: "hidden"  %>
-          <%= f.text_field :receiver_id, value: receiver.id,
-                           type: "hidden" %>
-          <%= f.submit "Envoyer", class: "chat" %>
-        </div>
+
       <% end %>
-    </div>
+
   </div>
+
+  <div>
+    <%= form_for message, remote: true do |f| %>
+      <div>
+        <%= f.text_area :body,
+                        placeholder: "Tapez votre message ici.",
+                        id: "t-message",
+                        class: "form-control" %>
+      </div>
+      <div>
+        <%= f.text_field :sender_id, value: current_user.id,
+                         type: "hidden"  %>
+        <%= f.text_field :receiver_id, value: receiver.id,
+                         type: "hidden" %>
+        <%= f.submit "Envoyer", class: "chat" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
 
@@ -39,7 +51,6 @@
       objDiv.scrollTop = objDiv.scrollHeight;
     }
     scrollToBottom();
-
 
     App['child_id_<%= current_user.child.id %>'] = App.cable.subscriptions.create(
         { channel: 'ChatRoomsChannel', child_id: <%= current_user.child.id %> },
