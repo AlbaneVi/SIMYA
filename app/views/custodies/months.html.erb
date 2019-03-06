@@ -15,7 +15,7 @@
 
   <% @custodies.each do |custody| %>
 
-    <div class="custodies-months <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
+    <div class="custodies-months <%= custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
       <span class="date-day"><%= l(custody.day_on, format: "%a")%></span>
       <span class="date-month"><%= l(custody.day_on, format: "%d")%></span>
       <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
