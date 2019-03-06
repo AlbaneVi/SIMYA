@@ -2,7 +2,6 @@ class Custody < ApplicationRecord
   belongs_to :user
 
   has_many :media, dependent: :destroy
-  accepts_nested_attributes_for :media
 
   validates :day_on, presence: true
 
@@ -16,6 +15,7 @@ class Custody < ApplicationRecord
 
   def switch
     self.user = user.child.parents.where.not(id: user.id).first
+    self.change_at = Time.now
     save
   end
 end

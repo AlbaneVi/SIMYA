@@ -24,17 +24,13 @@
       <span class="month"><%= l(@custody.day_on, format: "%B")%></span>
       </div>
 
-
-
       <%= simple_form_for @custody do |f| %>
         <%= f.input :title %>
         <%= f.input :text %>
 
-        <label class="label-photo" for="photo">Télécharger une photo</label>
+        <label class="label-photo"></label>
 
-        <%= f.simple_fields_for :media do |m| %>
-          <%= m.input :photo %>
-        <% end %>
+        <%= f.file_field :media, multiple: true  %>
 
         <%= f.button :submit, label= "Editer un moment", class: 'button btn-edit' %>
 

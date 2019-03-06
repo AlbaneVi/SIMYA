@@ -4,7 +4,11 @@
 <%= l(Date.today, format: "%B %Y") %>
   </p>
 <% end %>
-<p class="display-month">Aujourd'hui</p>
+
+<%= link_to custodies_path(number: (0)) do %>
+  <span class="tag">Aujourd'hui</span>
+<% end %>
+
 </div>
 
 <div class="custodies-container">
@@ -12,12 +16,19 @@
   <% @custodies.each do |custody| %>
 
     <% if custody.day_on == Date.today %>
+
       <div class="custody today <%=  custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
+
+        <div class="container-tag">
+
       <span class="day font-size"><%= l(custody.day_on, format: "%A")%></span>
       <span class="date font-size"><%= custody.day_on.day %></span>
       <span class="month font-size"><%= l(custody.day_on, format: "%B")%></span>
-      <span id="user-custody"><%= custody.user.first_name %></span>
 
+      <span class="tag"> Aujourd'hui</span>
+
+
+        </div>
     <% else %>
       <div class="custody  <%= custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
       <span class="day "><%= l(custody.day_on, format: "%A")%></span>
@@ -31,7 +42,7 @@
         <% if custody.future? %>
           <li>
             <%= link_to switch_custody_path(custody), method: :patch do  %>
-              <button type="button" class="button-circle align-right"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
+              <button type="button" class="button-circle align-right <% if custody.change_at  %> notification <% end %>"  data-toggle="tooltip" data-placement="bottom" title="Changer le planning">
                 <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>
               </button>
             <% end %>
@@ -39,7 +50,7 @@
 
         <% else %>
 
-        <% if custody.poor? %>
+          <% if custody.poor? %>
           <li><!-- button edit -->
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Editer un moment" >
@@ -57,9 +68,6 @@
             style="background-image: url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
             </div>
             <% end %>
-
-
-
 
         </li>
       </ul>
