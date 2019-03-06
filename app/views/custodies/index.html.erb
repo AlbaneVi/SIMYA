@@ -16,8 +16,11 @@
   <% @custodies.each do |custody| %>
 
     <% if custody.day_on == Date.today %>
-      <div class="custody outline thickness <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
+
+      <div class="custody today <%=  custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
+
         <div class="container-tag">
+
       <span class="day font-size"><%= l(custody.day_on, format: "%A")%></span>
       <span class="date font-size"><%= custody.day_on.day %></span>
       <span class="month font-size"><%= l(custody.day_on, format: "%B")%></span>
@@ -27,7 +30,7 @@
 
         </div>
     <% else %>
-      <div class="custody  <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
+      <div class="custody  <%= custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
       <span class="day "><%= l(custody.day_on, format: "%A")%></span>
       <span class="date"><%= custody.day_on.day %></span>
       <span class="month"><%= l(custody.day_on, format: "%B")%></span>

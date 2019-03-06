@@ -22,6 +22,12 @@ class User < ApplicationRecord
     end
   end
 
+  def first_partner?
+    return true unless ex_partner
+
+    self.created_at < ex_partner.created_at
+  end
+
   def fixed_ex_partner
     child.parents.where.not(id: id).last
   end
