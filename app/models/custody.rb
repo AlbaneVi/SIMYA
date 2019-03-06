@@ -16,6 +16,7 @@ class Custody < ApplicationRecord
 
   def switch
     self.user = user.child.parents.where.not(id: user.id).first
+    self.change_at = Time.now
     save
   end
 end
