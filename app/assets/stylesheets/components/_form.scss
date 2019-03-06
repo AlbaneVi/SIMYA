@@ -4,6 +4,14 @@
   margin: auto auto;
   padding: auto auto;
 }
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  height: 90vh;
+}
 
 .form-container {
   width: 352px;
@@ -11,7 +19,7 @@
   background-color: #fff;
   border: 1px solid $color-chat;
   max-height: 100%;
-  border-radius: 25px;
+  border-radius: 10px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   padding: 10px 25px;
   margin: 0 auto;
@@ -56,7 +64,7 @@
  }
 
 label {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .label-photo {
@@ -86,7 +94,9 @@ label {
 }
 #custody_media {
   margin-bottom: 20px;
-  font-size: 12px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
 }
 .form-group {
       margin-bottom: 20px
