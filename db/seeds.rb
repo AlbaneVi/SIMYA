@@ -52,7 +52,7 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
 
-40.times do |n|
+100.times do |n|
   titles = {
     "3" => "Parc",
     "42" => "Chez papi"
@@ -63,7 +63,7 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
   }
 
 
-  day_on = Date.parse("Monday") + n
+  day_on = Date.today - 1.month + n
   user_id = (n % 7 < 4) ? c1_parent1 : c1_parent2
   title = titles[n.to_s]
   text = textes[n.to_s]
