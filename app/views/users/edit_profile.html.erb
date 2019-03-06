@@ -4,12 +4,12 @@
 
 <div class="main-container">
   <div class="form-container">
-<%= simple_form_for @parent1 do |f| %>
-        <%= f.input :email %>
-        <%= f.input :phone %>
-        <label class="label-avatar" for="label-avatar">Télécharger une photo</label>
-        <%= f.file_field :avatar %>
-        <%= f.button :submit, label= "Modifier mon profil", class: 'button btn-edit' %>
-<% end %>
- </div> <!-- end form container -->
+    <%= simple_form_for @parent1 do |f| %>
+            <%= f.input :email %>
+            <%= f.input :phone %>
+            <label class="label-avatar" for="label-avatar">Télécharger une photo</label>
+            <%= f.file_field :avatar %>
+            <%= f.button :submit, label= "Modifier mon profil", class: 'button btn-edit' %>
+    <% end %>
+  </div> <!-- end form container -->
 </div> <!-- end container -->

@@ -45,6 +45,8 @@ fr:
         image: "Télécharger une photo"
       user:
          phone: "Téléphone"
+         password: "Mot de passe"
+         remember_me: "Se souvenir de moi"
 
 
     errors:

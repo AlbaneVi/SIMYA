@@ -1,10 +1,16 @@
 <!-- Bouton affichage mensuel -->
 <div class="month-container">
-  <%= link_to custodies_path(range: "month") do %>
-    <p class="display-month" data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
-      <%= l(@custodies.first.day_on, format: "%B %Y") %>
-    </p>
-  <% end %>
+
+<%= link_to custodies_path(range: "month") do %>
+  <p class="display-month" data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
+<%= l(@custodies.first.day_on, format: "%B %Y") %>
+  </p>
+<% end %>
+
+<%= link_to custodies_path(number: (0)) do %>
+  <span class="tag" data-toggle="tooltip" data-placement="bottom" title="Revenir à la semaine en cours">Aujourd'hui</span>
+<% end %>
+
 
   <!-- Bouton retour Aujourd'hui -->
   <%= link_to custodies_path(number: (0)) do %>
