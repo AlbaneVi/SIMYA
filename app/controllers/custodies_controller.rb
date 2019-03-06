@@ -7,9 +7,7 @@ class CustodiesController < ApplicationController
 
     @custodies = Custody.where(day_on: start_date..end_date).sort
 
-    if params[:range] == 'month'
-      render :months
-    end
+    render :months if params[:range] == 'month'
 
     @sender   = current_user
     @receiver = User.where(child_id: current_user.child_id).where.not(id: current_user.id).first
@@ -41,11 +39,16 @@ class CustodiesController < ApplicationController
   end
 
   def update
-    @custody.update(custodies_params)
-    params[:photos][:image].each do |image|
-      @image = @custody.media.create!(photo: image)
+    if @custody.update(custodies_params)
+      if params[:custody][:media].present?
+        params[:custody][:media].each do |image|
+          @image = @custody.media.create!(photo: image)
+        end
+      end
+      redirect_to custodies_path(number: number_for_custody)
+    else
+      render :edit
     end
-    redirect_to custodies_path
   end
 
   # PATCH /custodies/:id/switch
@@ -87,5 +90,9 @@ class CustodiesController < ApplicationController
 
   def current_monday
     Date.parse("Monday").to_time
+  end
+
+  def number_for_custody
+    ((@custody.day_on - Date.parse("sunday")) / 7).to_i - 1
   end
 end

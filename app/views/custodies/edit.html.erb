@@ -30,10 +30,7 @@
 
         <label class="label-photo"></label>
 
-        <%= f.simple_fields_for :media do |m| %>
-          <%= m.file_field :photo, :multiple => true, name: "photos[image][]"  %>
-
-        <% end %>
+        <%= f.file_field :media, multiple: true  %>
 
         <%= f.button :submit, label= "Editer un moment", class: 'button btn-edit' %>
 
