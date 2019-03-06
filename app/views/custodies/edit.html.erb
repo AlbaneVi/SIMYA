@@ -1,7 +1,7 @@
 
 <!-- Métadonnées -->
 <%= content_for(:meta_title) do  %>
-  Editer un moment
+  Ajouter un évènement
 <% end %>
 
 <div class="wrapper">
@@ -38,7 +38,7 @@
         <%= f.input :title %>
         <%= f.input :text %>
         <%= f.file_field :media, multiple: true  %>
-        <%= f.button :submit, label= "Editer un moment", class: 'button btn-edit' %>
+        <%= f.button :submit, label= "Ajouter un évènement", class: 'button btn-edit' %>
       <% end %>
     </div>
   <% end %>
