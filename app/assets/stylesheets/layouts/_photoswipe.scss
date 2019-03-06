@@ -1,0 +1,11 @@
+  .pswp img {
+  max-width: none;
+  height: auto !important;
+}
+.pswp__img {
+  position: relative !important;
+}
+.pswp__zoom-wrap {
+  display: flex !important;
+    align-items: center !important;
+}
