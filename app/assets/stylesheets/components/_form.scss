@@ -60,7 +60,7 @@ label {
 }
 
 .label-photo {
-  margin-top: 20px;
+  display: none;
 }
 
 #custody_text{
@@ -83,4 +83,11 @@ label {
   text-align: left;
   color: black;
   font-weight:lighter;
+}
+#custody_media {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.form-group {
+      margin-bottom: 20px
 }
