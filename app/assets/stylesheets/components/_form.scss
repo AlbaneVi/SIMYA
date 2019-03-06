@@ -101,3 +101,23 @@ label {
 .form-group {
       margin-bottom: 20px
 }
+input.btn {
+  width: 300px;
+  height: 25px;
+  border-radius: 12.5px;
+  background: $color-font;
+  color: #fff;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+input.form-check-input {
+  margin-right: 5px;
+}
+label.form-check-label {
+      margin: 0px;
+}
+.form-container a {
+  font-size: 15px;
+  opacity: 0.6;
+}
