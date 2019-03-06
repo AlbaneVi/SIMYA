@@ -27,11 +27,7 @@
       <%= simple_form_for @custody do |f| %>
         <%= f.input :title %>
         <%= f.input :text %>
-
-        <label class="label-photo"></label>
-
         <%= f.file_field :media, multiple: true  %>
-
         <%= f.button :submit, label= "Editer un moment", class: 'button btn-edit' %>
 
       <% end %>

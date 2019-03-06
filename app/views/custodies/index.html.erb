@@ -1,7 +1,7 @@
 <div class="month-container">
 <%= link_to custodies_path(range: "month") do %>
   <p class="display-month" data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
-<%= l(Date.today, format: "%B %Y") %>
+<%= l(@custodies.first.day_on, format: "%B %Y") %>
   </p>
 <% end %>
 
@@ -23,7 +23,7 @@
 
       <span class="day font-size"><%= l(custody.day_on, format: "%A")%></span>
       <span class="date font-size"><%= custody.day_on.day %></span>
-      <span class="month font-size"><%= l(custody.day_on, format: "%B")%></span>
+
 
       <span class="tag"> Aujourd'hui</span>
 
@@ -33,7 +33,7 @@
       <div class="custody  <%= custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
       <span class="day "><%= l(custody.day_on, format: "%A")%></span>
       <span class="date"><%= custody.day_on.day %></span>
-      <span class="month"><%= l(custody.day_on, format: "%B")%></span>
+
       <span id="user-custody"><%= custody.user.first_name %></span>
     <% end %>
 
