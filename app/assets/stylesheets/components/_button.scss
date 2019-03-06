@@ -24,6 +24,7 @@
   border-radius: 12.5px;
   width: 210px;
   border: none;
+  margin-bottom: 15px;
 }
 .chat:hover {
   background: #fff;
@@ -75,11 +76,11 @@ right: 10px;
   font-family: $body-font;
 }
 .button-open-chat {
-  position: absolute;
-  bottom:20px;
+  position: fixed;
+  bottom:17px;
   right:20px;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   color: #fff;
   background-color: $color-font;
