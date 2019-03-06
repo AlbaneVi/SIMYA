@@ -5,11 +5,13 @@
   border-radius: 12.5px;
   background: $color-font;
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
 }
-
+.btn-edit {
+  margin-bottom: 5px;
+}
 .button:hover {
   background: #fff;
   border: 1px solid ;
