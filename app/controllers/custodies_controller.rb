@@ -37,11 +37,14 @@ class CustodiesController < ApplicationController
   end
 
   def edit
-    @custody.media.build
+    @image = @custody.media.build
   end
 
   def update
     @custody.update(custodies_params)
+    params[:photos][:image].each do |image|
+      @image = @custody.media.create!(photo: image)
+    end
     redirect_to custodies_path
   end
 
