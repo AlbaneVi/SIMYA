@@ -14,10 +14,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def class_css
-    case email
-    when "toto@gmail.com"
+    if first_partner?
       'bg-user-1'
-    when "titi@gmail.com"
+    else
       'bg-user-2'
     end
   end
