@@ -6,6 +6,8 @@
   align-content: space-between;
   overflow: hidden;
   justify-content: center;
+  margin-top: 160px;
+  margin-bottom: 15px;
 }
 
 
@@ -94,9 +96,7 @@ position: relative;
   align-items: flex-start;
 }
 .month-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
     width: 500px;
     margin: 0 auto;
 }
@@ -109,13 +109,18 @@ p.display-month {
   border: 1px solid $color-chat;
   border-radius: 25px;
   text-align: center;
-  padding: 5px 10px;
+  padding: 2px 10px;
   font-size: 15px;
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
-  margin-left: 5px;
+
 }
+.header-right {
+  display: inline-flex;
+  float: right;
+}
+.padding { padding: 0px 5px 0px 0px; }
 
 .tag {
   background-color: $color-chat;
@@ -124,7 +129,7 @@ p.display-month {
   padding: 2px 10px;
   font-size: 12px;
   border-radius: 25px;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 0px 0px 0px;
   height: fit-content;
 }
 .container-tag {
