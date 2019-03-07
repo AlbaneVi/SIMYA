@@ -259,5 +259,4 @@ Custody.create!(day_on: Date.today + 23,
                 title: title,
                 text: text)
 
-end
 
