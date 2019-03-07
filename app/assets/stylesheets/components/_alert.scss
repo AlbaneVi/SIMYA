@@ -3,13 +3,23 @@
 * ------------------------------------- */
 
 .alert {
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
   color: white;
+  z-index: 55;
+  position: fixed;
+  top: 100px;
+  width: 500px;
 }
 .alert-info {
   background: $green;
+  z-index: 55;
 }
 .alert-warning {
   background: $red;
+  z-index: 55;
+}
+.flashes {
+  display: flex;
+  justify-content: center;
 }
