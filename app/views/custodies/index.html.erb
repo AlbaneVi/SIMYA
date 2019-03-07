@@ -54,8 +54,8 @@
 
       <% else %>
 
-        <% if custody.poor? %>
-          <!-- button edit seulement quand la carde n'est pas remplie-->
+
+          <!-- button edit sur la card a tout moment-->
           <li>
             <%= link_to edit_custody_path(custody) do  %>
               <button type="button" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Ajouter un évènement" >
@@ -63,7 +63,7 @@
               </button>
             <% end %>
           </li>
-        <% end %>
+
       <% end %>
 
       <li>
