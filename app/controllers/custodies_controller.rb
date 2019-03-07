@@ -28,7 +28,7 @@ class CustodiesController < ApplicationController
   def create
     @custody = Custody.new(custodies_params)
     if @custody.save!
-      redirect_to root_path
+      redirect_to custody_path(@custody)
     else
       render :new
     end
