@@ -27,7 +27,7 @@ c1_parent2 = User.create!(first_name: "Albane",
                           avatar: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-2.png')
 
 message = Message.create!({
-    body: 'coucou ça va?',
+    body: "Bonjour, c'est quoi le nom du sirop que tu donnes à Daphné quand elle tousse?",
     sender: c1_parent1,
     receiver: c1_parent2,
     read: true
@@ -35,15 +35,15 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 120.minutes.ago)
 
 message = Message.create!({
-    body: 'oui et toi?',
+    body: "Bonjour, tu devrais lire cet article, ca pourrait t'intéresser : 'http://lachargementalepourlesnuls.com",
     sender: c1_parent2,
     receiver: c1_parent1,
     read: true
 })
-Message.where(id: message.id).update_all(send_at: 110.minutes.ago)
+Message.where(id: message.id).update_all(send_at: 118.minutes.ago)
 
 message = Message.create!({
-    body: 'bof...',
+    body: "C'est du Stodal",
     sender: c1_parent1,
     receiver: c1_parent2,
 })
@@ -99,9 +99,9 @@ Custody.create!(day_on: Date.today - 4,
 
 #seeds 05/03
 Custody.create!(day_on: Date.today - 3,
-                user: c1_parent1,
+                user: c1_parent2,
                 title: nil,
-                text: "Grosse plaque d'éczema sur le bras droit, je mets de la crème, voir comment ça évolue...")
+                text: nil)
 
 #seeds 06/03
 custody_velo = Custody.create!(day_on: Date.today - 2,
