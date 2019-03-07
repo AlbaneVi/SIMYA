@@ -34,10 +34,11 @@
         <span class="month"><%= l(@custody.day_on, format: "%B")%></span>
       </div>
 
-      <%= simple_form_for @custody do |f| %>
+      <%= simple_form_for (@custody) do |f| %>
         <%= f.input :title %>
         <%= f.input :text %>
         <%= f.file_field :media, multiple: true  %>
+        <%= f.input :number, :as => :hidden, :input_html => { :value => @number } %>
         <%= f.button :submit, label= "Ajouter un évènement", class: 'button btn-edit' %>
       <% end %>
     </div>

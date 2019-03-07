@@ -28,7 +28,7 @@ class CustodiesController < ApplicationController
   def create
     @custody = Custody.new(custodies_params)
     if @custody.save!
-      redirect_to custody_path(@custody)
+      redirect_to custody_path(@custody.day_on.day)
     else
       render :new
     end
@@ -36,6 +36,7 @@ class CustodiesController < ApplicationController
 
   def edit
     @image = @custody.media.build
+    @number = params[:number]
   end
 
   def update
@@ -45,7 +46,7 @@ class CustodiesController < ApplicationController
           @image = @custody.media.create!(photo: image)
         end
       end
-      redirect_to custodies_path(number: number_for_custody)
+      redirect_to custodies_path(number: params[:custody][:number], anchor: "custody#{@custody.id}")
     else
       render :edit
     end
@@ -92,7 +93,7 @@ class CustodiesController < ApplicationController
     Date.parse("Monday").to_time
   end
 
-  def number_for_custody
-    ((@custody.day_on - Date.parse("sunday")) / 7).to_i - 1
-  end
+  # def number_for_custody
+  #   ((@custody.day_on - Date.parse("sunday")) / 7).to_i - 1
+  # end
 end
