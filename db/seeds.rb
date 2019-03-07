@@ -282,3 +282,6 @@ Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upl
 
 Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551952922/simya/glace_sathonay.jpg',
                custody_id: custody_glace.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551958088/simya/velo.jpg',
+               custody_id: custody_velo.id)
