@@ -6,6 +6,7 @@ class CustodiesController < ApplicationController
     params[:number] ||= 0
 
     @custodies = Custody.where(day_on: start_date..end_date).sort
+    @custody_today = Custody.where(day_on: Date.today)[0]
 
     render :months if params[:range] == 'month'
 

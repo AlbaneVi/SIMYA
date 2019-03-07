@@ -6,7 +6,6 @@
   align-content: space-between;
   overflow: hidden;
   justify-content: center;
-  margin-top: 160px;
   margin-bottom: 15px;
 }
 
@@ -149,3 +148,7 @@ p.display-month {
     display: inline-flex;
  }
 
+.invisible {
+  height: 300px;
+  border: 1px solid red;
+}

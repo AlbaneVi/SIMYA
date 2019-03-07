@@ -1,9 +1,11 @@
 <div class="header-fix">
 
+
   <div class="header">
     <h1> <%= link_to "Simya", custodies_path %> </h1>
     <h2>Facilitez-vous la garde alternée</h2>
   </div>
+
   <!-- Bouton affichage mensuel -->
   <div class="month-container">
     <!-- btn mois + icon calendar -->
@@ -16,7 +18,7 @@
 
     <div class="header-right">
     <!-- Bouton retour Aujourd'hui -->
-    <%= link_to custodies_path(number: params[:number], anchor:) do %>
+    <%= link_to custodies_path(number: 0, anchor:"custody#{@custody_today.id}") do %>
       <span class="tag" data-toggle="tooltip" data-placement="bottom" title="Revenir à la semaine en cours">Aujourd'hui</span>
     <% end %>
 
@@ -32,6 +34,7 @@
 
   </div>
 </div>
+
 <!-- début itération des cards -->
 <div class="custodies-container">
 
@@ -39,7 +42,7 @@
 
     <% if custody.day_on == Date.today %>
 
-      <div class="custody today <%=  custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
+      <div id="custody<%=custody.id%>" class="custody today <%=  custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
 
         <div class="container-tag">
           <span class="day font-size"><%= l(custody.day_on, format: "%A")%></span>
