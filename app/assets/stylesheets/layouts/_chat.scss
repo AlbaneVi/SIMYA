@@ -14,6 +14,7 @@
 .display {
   display: initial ;
   display: grid;
+  height: 70vh;
 }
 .title-chat {
   color: #fff;
@@ -22,7 +23,7 @@
 }
 .message-user {
   overflow: scroll;
-  height:320px;
+  height:auto;
   margin-top: 20px;
 }
 .message-time {
