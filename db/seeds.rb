@@ -70,7 +70,7 @@ Custody.create!(day_on: Date.today - 9,
 #seeds 28/02
 Custody.create!(day_on: Date.today - 8,
                 user: c1_parent2,
-                title: title,
+                title: nil,
                 text: "Je trouve Daphné fatiguée, elle se couche très tôt et n'est pas de très bonne humeur en fin de journée...")
 
 #seeds 01/03
