@@ -16,12 +16,12 @@
 
     <div class="header-right">
     <!-- Bouton retour Aujourd'hui -->
-    <%= link_to custodies_path(number: (0)) do %>
+    <%= link_to custodies_path(number: params[:number], anchor:) do %>
       <span class="tag" data-toggle="tooltip" data-placement="bottom" title="Revenir à la semaine en cours">Aujourd'hui</span>
     <% end %>
 
     <!-- bouton deconnecter -->
-    <%= link_to destroy_user_session_path,method: :delete do  %>
+    <%= link_to destroy_user_session_path, method: :delete do  %>
       <button type="button" class="icon" data-toggle="tooltip" data-placement="bottom" title  ="Se déconnecter" >
         <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
       </button>
