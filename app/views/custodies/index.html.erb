@@ -10,15 +10,13 @@
   </p>
 <% end %>
 
+  <!-- Bouton retour Aujourd'hui -->
 <%= link_to custodies_path(number: (0)) do %>
   <span class="tag" data-toggle="tooltip" data-placement="bottom" title="Revenir à la semaine en cours">Aujourd'hui</span>
 <% end %>
 
 
-  <!-- Bouton retour Aujourd'hui -->
-  <%= link_to custodies_path(number: (0)) do %>
-    <span class="tag">Aujourd'hui</span>
-  <% end %>
+
 </div>
 
 <!-- début itération des cards -->
@@ -139,9 +137,7 @@
 </button>
 
 
-<button type="button" class="button-circle btn-close-chat" data-toggle="tooltip" data-placement="top" title="Fermer le chat" >
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-</button>
+
 
   <!-- bouton deconnecter -->
   <%= link_to destroy_user_session_path,method: :delete do  %>
