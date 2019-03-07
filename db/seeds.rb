@@ -50,7 +50,7 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
 #seeds lundi 25/02
-Custody.create!(day_on: Date.today -11,
+Custody.create!(day_on: Date.today - 11,
                 user: c1_parent1,
                 title: "A la maison",
                 text: "Daphné a joué à la maison, puis nous sommes allés au parc, il faisait beau.")
