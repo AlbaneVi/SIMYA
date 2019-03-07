@@ -1,28 +1,27 @@
 <h1 class="month-month">
   <%= l(@custodies.first.day_on, format: "%B").capitalize%>
-<% if l(@custodies.first.day_on, format: "%B") != l(@custodies.last.day_on, format: "%B") %>
-  ~ <%= l(@custodies.last.day_on, format: "%B").capitalize%>
-    <% end %>
+  <% if l(@custodies.first.day_on, format: "%B") != l(@custodies.last.day_on, format: "%B") %>
+    ~ <%= l(@custodies.last.day_on, format: "%B").capitalize%>
+  <% end %>
 </h1>
 
 <%= link_to custodies_path do  %>
-<button type="button" id="button-close-month" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-</button>
+  <button type="button" id="button-close-month" class="button-circle" data-toggle="tooltip" data-placement="bottom" title="Fermer" >
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  </button>
 <% end %>
 
 <div class="calendrier">
 
-<% @custodies.each do |custody| %>
+  <% @custodies.each do |custody| %>
 
-<div class="custodies-months <%= custody.user == current_user ? 'bg-user-1' : "bg-user-2" %>">
-  <span class="date-day"><%= l(custody.day_on, format: "%a")%></span>
-  <span class="date-month"><%= l(custody.day_on, format: "%d")%></span>
-  <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
-  </div>
-</div>
-
-<% end %>
+    <div class="custodies-months <%= custody.user.first_partner? ? 'bg-user-1' : "bg-user-2" %>">
+      <span class="date-day"><%= l(custody.day_on, format: "%a")%></span>
+      <span class="date-month"><%= l(custody.day_on, format: "%d")%></span>
+      <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path custody.user.avatar, height: 300, width: 400, crop: :fill %>')">
+      </div>
+    </div>
+  <% end %>
 </div>
 
 
