@@ -4,7 +4,7 @@
   </div>
 <!-- Métadonnées -->
 <%= content_for(:meta_title) do  %>
-  Ajouter un évènement
+  Créer un souvenir
 <% end %>
 
 <div class="wrapper">
@@ -42,7 +42,7 @@
         <%= f.input :text %>
         <%= f.file_field :media, multiple: true  %>
         <%= f.input :number, :as => :hidden, :input_html => { :value => @number } %>
-        <%= f.button :submit, label= "Ajouter un évènement", class: 'button btn-edit' %>
+        <%= f.button :submit, label= "Créer un souvenir", class: 'button btn-edit' %>
       <% end %>
     </div>
   <% end %>
