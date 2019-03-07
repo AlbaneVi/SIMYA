@@ -1,24 +1,37 @@
-<!-- Bouton affichage mensuel -->
-<div class="month-container">
+<div class="header-fix">
 
-<%= link_to custodies_path(range: "month") do %>
-  <button type="button" class="icon" >
-    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-  </button>
-  <p class="display-month " data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
-<%= l(@custodies.first.day_on, format: "%B %Y") %>
-  </p>
-<% end %>
+  <div class="header">
+    <h1> <%= link_to "Simya", custodies_path %> </h1>
+    <h2>Facilitez-vous la garde alternée</h2>
+  </div>
+  <!-- Bouton affichage mensuel -->
+  <div class="month-container">
+    <!-- btn mois + icon calendar -->
+    <%= link_to custodies_path(range: "month") do %>
+      <p class="display-month " data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
+        <span class="glyphicon glyphicon-calendar padding" aria-hidden="true"></span>
+          <%= l(@custodies.first.day_on, format: "%B %Y") %>
+      </p>
+    <% end %>
 
-  <!-- Bouton retour Aujourd'hui -->
-<%= link_to custodies_path(number: (0)) do %>
-  <span class="tag" data-toggle="tooltip" data-placement="bottom" title="Revenir à la semaine en cours">Aujourd'hui</span>
-<% end %>
+    <div class="header-right">
+    <!-- Bouton retour Aujourd'hui -->
+    <%= link_to custodies_path(number: (0)) do %>
+      <span class="tag" data-toggle="tooltip" data-placement="bottom" title="Revenir à la semaine en cours">Aujourd'hui</span>
+    <% end %>
+
+    <!-- bouton deconnecter -->
+    <%= link_to destroy_user_session_path,method: :delete do  %>
+      <button type="button" class="icon" data-toggle="tooltip" data-placement="bottom" title  ="Se déconnecter" >
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+      </button>
+    <% end %>
+    <!-- fin btn -->
+    </div>
 
 
-
+  </div>
 </div>
-
 <!-- début itération des cards -->
 <div class="custodies-container">
 
@@ -111,10 +124,10 @@
 </div>
 
 
-
+<!-- Bouton semaine précèdente -->
   <div class="btn-previous">
     <%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
-      <button type="button" class="button-circle log-out"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
+      <button type="button" class="button-circle fixed left"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
       </button>
     <% end %>
@@ -124,7 +137,7 @@
 <!-- Bouton semaine suivante -->
 <div class="btn-next">
   <%= link_to custodies_path(number: (params[:number].to_i + 1)) do %>
-    <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine suivante">
+    <button type="button" class="button-circle fixed right"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine suivante">
       <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
     </button>
   <% end %>
@@ -135,17 +148,6 @@
 <button type="button" class="button-open-chat" data-toggle="tooltip" data-placement="top" title="Ouvrir le chat" >
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
 </button>
-
-
-
-
-  <!-- bouton deconnecter -->
-  <%= link_to destroy_user_session_path,method: :delete do  %>
-    <button type="button" class="button-circle log-out" data-toggle="tooltip" data-placement="bottom" title  ="Se déconnecter" >
-      <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-    </button>
-  <% end %>
-  <!-- fin btn -->
 
 
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

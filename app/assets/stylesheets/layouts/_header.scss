@@ -3,3 +3,11 @@
   margin: 0 auto;
   padding-bottom: 20px;
 }
+.header-fix {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  margin: 0 auto;
+  z-index: 5;
+}
