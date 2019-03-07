@@ -1,17 +1,22 @@
 <div class="message">
 
-<button type="button"
-        class="button-close-chat btn-close-chat"
-        data-toggle="tooltip"
-        data-placement="top"
-        title="Fermer le chat" >
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-</button>
+<div class="column">
+  <div  class="avatar"
+        style="background-image: url('<%= cl_image_path receiver.avatar, height: 300, width: 400, crop: :fill %>')">
+  </div>
 
   <h4 class="title-chat">
     Envoyer un message à <%= receiver.first_name %>
   </h4>
 
+  <button type="button"
+          class="button-close-chat btn-close-chat"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Fermer le chat" >
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  </button>
+</div>
   <div class="message-user">
       <% messages.each do |message| %>
         <% if message.body %>
