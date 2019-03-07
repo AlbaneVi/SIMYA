@@ -21,7 +21,6 @@
   margin-top: 0;
 }
 .message-user {
-  display: grid;
   overflow: scroll;
   height:320px;
   margin-top: 20px;
@@ -30,29 +29,43 @@
   color: #fff;
   font-size: 10px;
 }
-.message-sender {
+
+.message-wrapper {
+  display: flex;
+}
+
+.message-wrapper.sender {
+  justify-content: flex-end;
+}
+
+.message-wrapper.receiver {
+  justify-content: flex-start;
+}
+
+.message-container {
   width: 230px;
+}
+
+.message-content {
   text-align: left;
   min-height: 35px;
-  border-radius: 0px 15px 15px 15px;
   background: #fff;
   margin-bottom: 15px;
   font-size: 12px;
   padding: 5px;
   border: 2px solid #a3e2da;
 }
-.message-receiver {
-  justify-self: end;
-  width: 230px;
-  min-height: 35px;
+
+.sender .message-content {
   border-radius: 15px 0px 15px 15px;
-  background: #fff;
-  margin-bottom: 15px;
-  font-size: 12px;
-  padding: 5px;
-  text-align: right;
   border: 2px solid #a4bbe2;
 }
+
+.receiver .message-content {
+  border-radius: 0px 15px 15px 15px;
+  border: 2px solid #a3e2da;
+}
+
 .button-close-chat {
   justify-self: end;
   width: 30px;

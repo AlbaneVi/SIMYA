@@ -50,12 +50,33 @@
       const objDiv = document.querySelector(".message-user");
       objDiv.scrollTop = objDiv.scrollHeight;
     }
+
+    function updateLastMessageClass(message_sender_id) {
+      const lastMessage = document.querySelector(".message-wrapper:last-child");
+      lastMessage.classList.remove("sender");
+
+      if (message_sender_id == <%= current_user.id %>) {
+        console.log("sender")
+        lastMessage.classList.add("sender");
+      } else {
+        console.log("receiver");
+        lastMessage.classList.add("receiver");
+      }
+    }
     scrollToBottom();
 
     App['child_id_<%= current_user.child.id %>'] = App.cable.subscriptions.create(
         { channel: 'ChatRoomsChannel', child_id: <%= current_user.child.id %> },
         { received: (data) => {
           document.querySelector(".message-user").insertAdjacentHTML('beforeend', data.message_partial);
+
+          updateLastMessageClass(data.current_user_id);
+
+          const btn = document.querySelector(".button-open-chat");
+          const chat = document.querySelector(".message");
+          chat.classList.add("display");
+          btn.style.display = "none";
+
           scrollToBottom();
         }
 
