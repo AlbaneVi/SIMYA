@@ -14,12 +14,18 @@
 .display {
   display: initial ;
   display: grid;
-  height: 70vh;
+  height: 72vh;
+}
+.column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .title-chat {
   color: #fff;
   line-height: 25px;
   margin-top: 0;
+  font-size: 18px;
 }
 .message-user {
   overflow: scroll;
@@ -68,17 +74,12 @@
 }
 
 .button-close-chat {
-  justify-self: end;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid $color-font;
-  color: $color-font;
-  font-size: 18px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 1px;
+  padding: 0;
+  color: #fff ;
+  font-size: 14px;
+  border: 0;
+  background-color: transparent
 }
 #t-message {
   width: 295px;
