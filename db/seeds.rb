@@ -50,13 +50,13 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
 #seeds lundi 25/02
-Custody.create!(day_on: Date.today - 11,
+custody_maison = Custody.create!(day_on: Date.today - 11,
                 user: c1_parent1,
                 title: "A la maison",
                 text: "Daphné a joué à la maison, puis nous sommes allés au parc, il faisait beau.")
 
 #seeds 26/02
-Custody.create!(day_on: Date.today - 10,
+custody_lego = Custody.create!(day_on: Date.today - 10,
                 user: c1_parent1,
                 title: "Cinéma",
                 text: "Nous sommes allés au cinéma voir La grande aventure Légo 2. C'était sympa mais pas extraordinaire non plus")
@@ -74,22 +74,22 @@ Custody.create!(day_on: Date.today - 8,
                 text: "Je trouve Daphné fatiguée, elle se couche très tôt et n'est pas de très bonne humeur en fin de journée...")
 
 #seeds 01/03
-Custody.create!(day_on: Date.today - 7,
+custody_cascade = Custody.create!(day_on: Date.today - 7,
                 user: c1_parent2,
-                title: nil,
-                text: nil)
+                title: "Cascade",
+                text: "Nous nous sommes promenés et nous sommes allées voir une cascade. Daphné aime beaucoup marcher, c'est un vrai régal !")
 
 #seeds 02/03
-Custody.create!(day_on: Date.today - 6,
+custody_dragons = Custody.create!(day_on: Date.today - 6,
                 user: c1_parent2,
                 title: "Cinéma",
                 text: "Nous sommes allées voir Dragons 3. C'était génial ! Le film est bien, Daphné a beaucoup ri, elle a même pleuré un peu... C'était émouvant !")
 
 #seeds 03/03
-Custody.create!(day_on: Date.today - 5,
+custody_glace = Custody.create!(day_on: Date.today - 5,
                 user: c1_parent2,
                 title: "Dimanche tranquille",
-                text: "Il Faisiat très beau, nous sommes allées manger une glace Place Sathonay")
+                text: "Il Faisait très beau, nous sommes allées manger une glace Place Sathonay")
 
 #seeds lundi 04/03
 Custody.create!(day_on: Date.today - 4,
@@ -104,7 +104,7 @@ Custody.create!(day_on: Date.today - 3,
                 text: "Grosse plaque d'éczema sur le bras droit, je mets de la crème, voir comment ça évolue...")
 
 #seeds 06/03
-Custody.create!(day_on: Date.today - 2,
+custody_velo = Custody.create!(day_on: Date.today - 2,
                 user: c1_parent1,
                 title: "Vélo",
                 text: "Progrès incroyables ! Mais s'arrêter reste encore compliqué. ")
@@ -113,7 +113,7 @@ Custody.create!(day_on: Date.today - 2,
 Custody.create!(day_on: Date.today - 1,
                 user: c1_parent1,
                 title: "Chorale à l'école",
-                text: "daphné apprends 'Pour louper l'école' d'Aldebert")
+                text: "Daphné apprends 'Pour louper l'école' d'Aldebert")
 
 #seeds 08/03
 Custody.create!(day_on: Date.today,
@@ -259,4 +259,26 @@ Custody.create!(day_on: Date.today + 23,
                 title: nil,
                 text: nil)
 
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551952919/simya/a_la_maison.jpg',
+               custody_id: custody_maison.id)
 
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551955729/simya/lego.jpg',
+               custody_id: custody_lego.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551953495/simya/cascade_1-min.jpg',
+               custody_id: custody_cascade.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551953495/simya/cascade2-min.jpg',
+               custody_id: custody_cascade.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551956224/simya/cascade3-min.jpg',
+               custody_id: custody_cascade.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551956223/simya/cascade4-min.jpg',
+               custody_id: custody_cascade.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551952914/simya/dragons_3.jpg',
+               custody_id: custody_dragons.id)
+
+Medium.create!(remote_photo_url: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551952922/simya/glace_sathonay.jpg',
+               custody_id: custody_glace.id)
