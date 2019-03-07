@@ -1,6 +1,10 @@
 <div class="month-container">
+
 <%= link_to custodies_path(range: "month") do %>
-  <p class="display-month" data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
+  <button type="button" class="icon" >
+    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+  </button>
+  <p class="display-month " data-toggle="tooltip" data-placement="bottom" title="Voir le mois">
 <%= l(@custodies.first.day_on, format: "%B %Y") %>
   </p>
 <% end %>
@@ -109,9 +113,10 @@
     </div>
   <% end %>
 
+
   <div class="btn-previous">
     <%= link_to custodies_path(number: (params[:number].to_i - 1)) do %>
-      <button type="button" class="button-circle"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
+      <button type="button" class="button-circle log-out"  data-toggle="tooltip" data-placement="bottom" title="Voir semaine précédente">
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
       </button>
     <% end %>
@@ -135,6 +140,13 @@
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button>
 
+  <!-- bouton deconnecter -->
+  <%= link_to destroy_user_session_path,method: :delete do  %>
+    <button type="button" class="button-circle log-out" data-toggle="tooltip" data-placement="bottom" title  ="Se déconnecter" >
+      <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+    </button>
+  <% end %>
+  <!-- fin btn -->
 
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 

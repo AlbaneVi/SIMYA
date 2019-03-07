@@ -101,16 +101,21 @@ position: relative;
     width: 500px;
     margin: 0 auto;
 }
+.month-container > a {
+  display: inline-flex;
+
+}
 p.display-month {
   background-color: #fff;
   border: 1px solid $color-chat;
   border-radius: 25px;
   text-align: center;
-  padding: 5px 20px;
-  font-size: 16px;
+  padding: 5px 10px;
+  font-size: 15px;
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
+  margin-left: 5px;
 }
 
 .tag {
@@ -130,5 +135,13 @@ p.display-month {
 .thickness {
   border: 2px solid $color-chat;
 }
-
+ .icon {
+  width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    border: 1px solid #2d4059;
+    color: #2d4059;
+    font-size: 14px;
+    display: inline-flex;
+ }
 
