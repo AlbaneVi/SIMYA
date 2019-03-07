@@ -1,16 +1,20 @@
 footer {
   width: 100%;
-  display: inline-block;
-  height: 30px;
-  background-color: #EFEFEF;
-  bottom: 0; left: 0; right: 0;
+  height: 15px;
+  background-color: $color-chat;
+  position: fixed;
+  bottom: 0px;
 }
 
-p {
-  padding-left: 1%;
-  color: black;
-  font-size: 0.7em;
-  line-height: 70px;
+footer > p {
+ color: #fff;
+
+ padding: 0px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 0px;
 }
 
 
