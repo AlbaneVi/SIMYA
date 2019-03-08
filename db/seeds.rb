@@ -35,7 +35,7 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 120.minutes.ago)
 
 message = Message.create!({
-    body: " Mme Chambon - 06 13 99 45 73"
+    body: " Mme Chambon - 06 13 99 45 73",
     sender: c1_parent2,
     receiver: c1_parent1,
     read: true
