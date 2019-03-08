@@ -27,7 +27,7 @@ c1_parent2 = User.create!(first_name: "Albane",
                           avatar: 'https://res.cloudinary.com/dvvkrrjc4/image/upload/v1551273327/avatar-2.png')
 
 message = Message.create!({
-    body: "Bonjour, c'est quoi le nom du sirop que tu donnes à Daphné quand elle tousse?",
+    body: "Bonjour, C'est quoi le numéro de la responsable de la garderie à l'école ?",
     sender: c1_parent1,
     receiver: c1_parent2,
     read: true
@@ -35,7 +35,7 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 120.minutes.ago)
 
 message = Message.create!({
-    body: "Bonjour, tu devrais lire cet article, ca pourrait t'intéresser : 'http://lachargementalepourlesnuls.com",
+    body: " Mme Chambon - 06 13 99 45 73"
     sender: c1_parent2,
     receiver: c1_parent1,
     read: true
@@ -43,9 +43,9 @@ message = Message.create!({
 Message.where(id: message.id).update_all(send_at: 118.minutes.ago)
 
 message = Message.create!({
-    body: "C'est du Stodal",
-    sender: c1_parent1,
-    receiver: c1_parent2,
+    body: "A ce propos, tu devrais lire cet article, ca pourrait t'intéresser : 'http://lachargementalepourlesnuls.com",
+    sender: c1_parent2,
+    receiver: c1_parent1,
 })
 Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
