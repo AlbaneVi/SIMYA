@@ -98,6 +98,11 @@ right: 10px;
   justify-content: center;
   align-items: center;
 }
+.button-open-chat:hover {
+  background-color: #fff;
+  border: 1px solid $color-font;
+  color: $color-font;
+}
 
 .notification {
   position: relative;
@@ -159,4 +164,9 @@ right: 10px;
   // justify-content: space-between;
   // font-weight: 100;
   margin-right: 5px;
+}
+.button-today:hover {
+  background-color: #fff;
+  border: 1px solid $color-chat;
+  color: $color-chat;
 }
