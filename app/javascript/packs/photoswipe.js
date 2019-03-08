@@ -154,10 +154,12 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect();
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
+            },
+            showHideOpacity: true,
+            showAnimationDuration: 0,
+            hideAnimationDuration: 0
 
         };
-
 
         // PhotoSwipe opened from URL
         if(fromURL) {
