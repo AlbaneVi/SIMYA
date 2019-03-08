@@ -51,7 +51,7 @@ Message.where(id: message.id).update_all(send_at: 30.minutes.ago)
 
 #seeds lundi 25/02
 custody_maison = Custody.create!(day_on: Date.today - 11,
-                user: c1_parent1,
+                user: c1_parent2,
                 title: "A la maison",
                 text: "Daphné a joué à la maison, puis nous sommes allés au parc, il faisait beau.")
 
@@ -81,15 +81,15 @@ custody_cascade = Custody.create!(day_on: Date.today - 7,
 
 #seeds 02/03
 custody_dragons = Custody.create!(day_on: Date.today - 6,
-                user: c1_parent2,
+                user: c1_parent1,
                 title: "Cinéma",
-                text: "Nous sommes allées voir Dragons 3. C'était génial ! Le film est bien, Daphné a beaucoup ri, elle a même pleuré un peu... C'était émouvant !")
+                text: "Nous sommes allés voir Dragons 3. C'était génial ! Le film est bien, Daphné a beaucoup ri, elle a même pleuré un peu... C'était émouvant !")
 
 #seeds 03/03
 custody_glace = Custody.create!(day_on: Date.today - 5,
-                user: c1_parent2,
+                user: c1_parent1,
                 title: "Dimanche tranquille",
-                text: "Il Faisait très beau, nous sommes allées manger une glace Place Sathonay")
+                text: "Il Faisait très beau, nous sommes allés manger une glace Place Sathonay")
 
 #seeds lundi 04/03
 Custody.create!(day_on: Date.today - 4,
