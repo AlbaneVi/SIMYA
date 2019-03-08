@@ -40,7 +40,7 @@ message = Message.create!({
     receiver: c1_parent1,
     read: true
 })
-Message.where(id: message.id).update_all(send_at: 118.minutes.ago)
+Message.where(id: message.id).update_all(send_at: 32.minutes.ago)
 
 message = Message.create!({
     body: "A ce propos, tu devrais lire cet article, ca pourrait t'intéresser : 'http://lachargementalepourlesnuls.com",
